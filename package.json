@@ -1,0 +1,9 @@
+{
+  "name": "benkim-clone",
+  "version": "1.0.0",
+  "description": "Pixel-perfect clone of thebenkim.com",
+  "scripts": {
+    "dev": "npx serve -l 3000 .",
+    "start": "npx serve -l 3000 ."
+  }
+}

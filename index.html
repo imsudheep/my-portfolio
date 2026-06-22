@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ben Kim</title>
+  <meta name="description" content="Sudheep Sivakumar — building apps, films, and a life worth replaying.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- ============ FIXED NAV ============ -->
+  <nav class="fixed-nav" id="fixedNav">
+    <div class="nav-logo">
+      <a href="#hero">
+        <span class="logo-text">SUDHEEP</span>
+        <span class="logo-text">HERE</span>
+      </a>
+    </div>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- ============ NAV OVERLAY ============ -->
+  <div class="nav-overlay" id="navOverlay">
+    <button class="nav-overlay-close" id="navOverlayClose" aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+        <path d="M18 6L6 18M6 6l12 12" />
+      </svg>
+    </button>
+    <div class="nav-overlay-content">
+      <a href="#journey" class="nav-overlay-link" data-index="1">About</a>
+      <a href="#ventures" class="nav-overlay-link" data-index="2">Ventures</a>
+      <a href="#content" class="nav-overlay-link" data-index="3">Content</a>
+      <a href="#films" class="nav-overlay-link" data-index="4">Films</a>
+      <a href="#motorsport" class="nav-overlay-link" data-index="5">F1</a>
+      <a href="#contact" class="nav-overlay-link" data-index="6">Contact</a>
+    </div>
+  </div>
+
+  <!-- ============ DOT NAVIGATION ============ -->
+  <div class="dot-nav" id="dotNav">
+    <button class="dot active" data-index="0" aria-label="Go to hero"></button>
+    <button class="dot" data-index="1" aria-label="Go to journey"></button>
+    <button class="dot" data-index="2" aria-label="Go to ventures"></button>
+    <button class="dot" data-index="3" aria-label="Go to content"></button>
+    <button class="dot" data-index="4" aria-label="Go to films"></button>
+    <button class="dot" data-index="5" aria-label="Go to motorsport"></button>
+    <button class="dot" data-index="6" aria-label="Go to contact"></button>
+  </div>
+
+  <!-- ============ MAIN CONTENT ============ -->
+  <main class="page-container" id="pageContainer">
+
+    <!-- SECTION 0: HERO -->
+    <section class="section section--hero" id="hero" data-chapter="">
+      <div class="hero-content">
+        <div class="hero-left">
+          <p class="hero-label">Hello</p>
+          <h1 class="hero-name">
+            <span class="hero-name-line">I'm</span>
+            <span class="hero-name-line">Sudheep</span>
+          </h1>
+          <p class="hero-tagline">An undergraduate student passionate about web development.</p>
+
+
+          <div class="hero-education">
+            <span>SKACAS · BACHELOR’S IN COMPUTER SCIENCE</span>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="hero-circle"></div>
+          <div class="hero-image-wrapper">
+            <img src="portfolio img.png" alt="Ben Kim portrait" class="hero-portrait">
+            <div class="hero-image-overlay">
+              <span class="hero-overlay-label">CHAPTER ONE</span>
+              <span class="hero-overlay-text">still learning, still building.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-hint">
+        <span>SCROLL TO EXPLORE</span>
+      </div>
+    </section>
+
+    <!-- SECTION 1: THE JOURNEY -->
+    <section class="section section--journey" id="journey" data-chapter="CHAPTER ONE">
+      <div class="journey-pin">
+        <div class="journey-content">
+        <div class="journey-left">
+          <h2 class="section-title-large">the<br>journey</h2>
+          <div class="journey-details">
+            <div class="journey-detail">
+              <span class="detail-label">BASE</span>
+              <span class="detail-value">East Lansing, MI</span>
+            </div>
+            <div class="journey-detail">
+              <span class="detail-label">DEGREE</span>
+              <span class="detail-value">Hospitality · Entrepreneurship · Real Estate</span>
+            </div>
+            <div class="journey-detail">
+              <span class="detail-label">FOCUS</span>
+              <span class="detail-value">apps · film · freedom</span>
+            </div>
+          </div>
+          <p class="journey-scroll-hint">scroll to move through the timeline →</p>
+        </div>
+        <div class="journey-right" id="journeyTimeline">
+          <div class="timeline-cards">
+            <div class="timeline-card" style="--rotate: -6deg; --delay: 0s">
+              <img src="https://www.thebenkim.com/media/msu.jpg" alt="MSU">
+              <div class="timeline-card-info">
+                <span class="timeline-card-title">MSU · 2022</span>
+                <span class="timeline-card-desc">Majoring in hospitality business at Michigan State.</span>
+              </div>
+            </div>
+            <div class="timeline-card" style="--rotate: 3deg; --delay: 0.1s">
+              <img src="https://www.thebenkim.com/media/hotel.png" alt="Hotel Front Desk">
+              <div class="timeline-card-info">
+                <span class="timeline-card-title">HOTEL FRONT DESK · 2022</span>
+                <span class="timeline-card-desc">Learning hospitality the hard way: late check-ins, angry guests, and
+                  fixing things on fly.</span>
+              </div>
+            </div>
+            <div class="timeline-card" style="--rotate: -4deg; --delay: 0.2s">
+              <img src="https://www.thebenkim.com/media/first-code.jpg" alt="First Lines of Code">
+              <div class="timeline-card-info">
+                <span class="timeline-card-title">FIRST LINES OF CODE · 2023</span>
+                <span class="timeline-card-desc">Googling React Native errors between lectures and night shifts.</span>
+              </div>
+            </div>
+            <div class="timeline-card" style="--rotate: 5deg; --delay: 0.3s">
+              <img src="https://www.thebenkim.com/media/commercial.jpg" alt="Commercial & Marketing">
+              <div class="timeline-card-info">
+                <span class="timeline-card-title">COMMERCIAL & MARKETING · 2024</span>
+                <span class="timeline-card-desc">Promoting Dilemaa across campus.</span>
+              </div>
+            </div>
+            <div class="timeline-card" style="--rotate: -3deg; --delay: 0.4s">
+              <img src="https://www.thebenkim.com/media/dilemaa-launch.jpg" alt="Dilemaa Launch">
+              <div class="timeline-card-info">
+                <span class="timeline-card-title">DILEMAA LAUNCH · 2024</span>
+                <span class="timeline-card-desc">First app on the App Store. 10K downloads in 3 months.</span>
+              </div>
+            </div>
+            <div class="timeline-card" style="--rotate: 4deg; --delay: 0.5s">
+              <img src="https://www.thebenkim.com/media/travel.png" alt="Travel">
+              <div class="timeline-card-info">
+                <span class="timeline-card-title">TRAVEL · 2024</span>
+                <span class="timeline-card-desc">Living in Korea, filming, and building from cafés.</span>
+              </div>
+            </div>
+            <div class="timeline-card" style="--rotate: -5deg; --delay: 0.6s">
+              <img src="https://www.thebenkim.com/media/pitch-win.jpg" alt="Pitch Win">
+              <div class="timeline-card-info">
+                <span class="timeline-card-title">PITCH WIN · 2025</span>
+                <span class="timeline-card-desc">Won the entrepreneurship pitch competition.</span>
+              </div>
+            </div>
+            <div class="timeline-card" style="--rotate: 2deg; --delay: 0.7s">
+              <img src="https://www.thebenkim.com/media/nostalgia.png" alt="Nostalgia">
+              <div class="timeline-card-info">
+                <span class="timeline-card-title">NOSTALGIA · 2025</span>
+                <span class="timeline-card-desc">Built a conversational journal for people who feel burnt out.</span>
+              </div>
+            </div>
+            <div class="timeline-card" style="--rotate: -2deg; --delay: 0.8s">
+              <img src="https://www.thebenkim.com/media/nostalgia-mkt.jpg" alt="Nostalgia Marketing">
+              <div class="timeline-card-info">
+                <span class="timeline-card-title">MARKETING · 2025</span>
+                <span class="timeline-card-desc">Shooting cinematic promos for Nostalgia launch.</span>
+              </div>
+            </div>
+            <div class="timeline-card" style="--rotate: 6deg; --delay: 0.9s">
+              <img src="https://www.thebenkim.com/media/modeling.jpg" alt="Modeling">
+              <div class="timeline-card-info">
+                <span class="timeline-card-title">MODELING · 2025</span>
+                <span class="timeline-card-desc">Side quests and creative work outside the screen.</span>
+              </div>
+            </div>
+            <div class="timeline-card" style="--rotate: -4deg; --delay: 1.0s">
+              <img src="https://www.thebenkim.com/media/sae.jpg" alt="Sae">
+              <div class="timeline-card-info">
+                <span class="timeline-card-title">SAE · 2026</span>
+                <span class="timeline-card-desc">Learning Korean through cinematic micro-lessons.</span>
+              </div>
+            </div>
+            <div class="timeline-card" style="--rotate: 3deg; --delay: 1.1s">
+              <img src="https://www.thebenkim.com/media/drivers.jpg" alt="Drivers">
+              <div class="timeline-card-info">
+                <span class="timeline-card-title">MOTORSPORT · 2026</span>
+                <span class="timeline-card-desc">Built a kart track analyzer. Always racing.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    
+    <!-- SECTION 2: VENTURES -->
+    <section class="section section--ventures" id="ventures" data-chapter="CHAPTER TWO">
+      <div class="ventures-content">
+        <div class="ventures-header">
+          <span class="chapter-label">CHAPTER TWO</span>
+          <h2 class="section-title-large">ventures</h2>
+          <p class="ventures-subtitle">Every product is a different answer to the same question: "How can I make it
+            easier for people to move forward?"</p>
+        </div>
+        <div class="ventures-grid">
+          <!-- Dilemaa -->
+          <div class="venture-card">
+            <div class="venture-card-image">
+              <span class="venture-card-badge">01 · PRODUCT</span>
+              <img src="https://www.thebenkim.com/media/dilemaa.png" alt="Dilemaa app icon" class="venture-app-icon">
+              <span class="venture-card-name">Dilemaa</span>
+            </div>
+            <div class="venture-card-body">
+              <h3 class="venture-title">Dilemaa</h3>
+              <p class="venture-tagline">SOCIAL DECISION-MAKING FOR REAL-LIFE DILEMMAS</p>
+              <p class="venture-desc">A Q&A social app where people share real dilemmas, get help from others, and
+                follow up with what they actually chose.</p>
+              <div class="venture-stats">
+                <div class="venture-stat">
+                  <span class="stat-number">10K+</span>
+                  <span class="stat-label">DOWNLOADS</span>
+                </div>
+                <div class="venture-stat">
+                  <span class="stat-number">120+</span>
+                  <span class="stat-label">COUNTRIES</span>
+                </div>
+              </div>
+              <p class="venture-tech">REACT NATIVE · NODE · AZURE · ML RECOMMENDATIONS</p>
+            </div>
+          </div>
+          <!-- Nostalgia -->
+          <div class="venture-card">
+            <div class="venture-card-image">
+              <span class="venture-card-badge">02 · PRODUCT</span>
+              <img src="https://www.thebenkim.com/media/nostalgia_app.png" alt="Nostalgia app icon"
+                class="venture-app-icon">
+              <span class="venture-card-name">Nostalgia</span>
+            </div>
+            <div class="venture-card-body">
+              <h3 class="venture-title">Nostalgia</h3>
+              <p class="venture-tagline">A CONVERSATIONAL JOURNAL FOR PEOPLE WHO FEEL BURNT OUT</p>
+              <p class="venture-desc">You talk like you would to a friend, and Nostalgia turns the conversation into
+                structured journals you can revisit.</p>
+              <div class="venture-stats">
+                <div class="venture-stat">
+                  <span class="stat-number">3.5K+</span>
+                  <span class="stat-label">JOURNALS</span>
+                </div>
+                <div class="venture-stat">
+                  <span class="stat-number">35+</span>
+                  <span class="stat-label">COUNTRIES</span>
+                </div>
+              </div>
+              <p class="venture-tech">REACT NATIVE · SUPABASE · AI CONVERSATION FLOWS</p>
+            </div>
+          </div>
+          <!-- Sae -->
+          <div class="venture-card">
+            <div class="venture-card-image">
+              <span class="venture-card-badge">03 · PRODUCT</span>
+              <img src="https://www.thebenkim.com/media/sae.png" alt="Sae app icon" class="venture-app-icon">
+              <span class="venture-card-name">Sae</span>
+            </div>
+            <div class="venture-card-body">
+              <h3 class="venture-title">Sae</h3>
+              <p class="venture-tagline">LEARNING HANGUL THROUGH TINY CINEMATIC LESSONS</p>
+              <p class="venture-desc">A Korean-learning app that feels like a game: S-curve paths, a magpie mascot, and
+                focused Hangul drills.</p>
+              <div class="venture-stats">
+                <div class="venture-stat">
+                  <span class="stat-number">RECENTLY LAUNCHED</span>
+                  <span class="stat-label">STATUS</span>
+                </div>
+                <div class="venture-stat">
+                  <span class="stat-number">HANGUL BASICS</span>
+                  <span class="stat-label">FOCUS</span>
+                </div>
+              </div>
+              <p class="venture-tech">CUSTOM LESSON ENGINE · JSON SCENES · REACT NATIVE</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: DOCUMENTING THE JOURNEY -->
+    <section class="section section--documenting" id="content" data-chapter="CHAPTER THREE">
+      <div class="documenting-content">
+        <div class="documenting-header">
+          <span class="chapter-label">CHAPTER THREE</span>
+          <h2 class="section-title-xl">documenting the journey</h2>
+          <p class="documenting-subtitle">I treat my life like a series of films — from shipping builds at 2 a.m. to
+            boarding flights with a camera in my hand.</p>
+        </div>
+        <div class="documenting-cards">
+          <div class="doc-card" style="--rotate: -8deg">
+            <img src="https://www.thebenkim.com/media/business.png" alt="My app went viral">
+            <div class="doc-card-info">
+              <span class="doc-card-title">my app went viral</span>
+              <span class="doc-card-stat">160K+ VIEWS</span>
+            </div>
+          </div>
+          <div class="doc-card" style="--rotate: -4deg">
+            <img src="public/media/student.png" alt="Life as a student">
+            <div class="doc-card-info">
+              <span class="doc-card-title">life as a student</span>
+              <span class="doc-card-stat">CINEMATIC VLOG</span>
+            </div>
+          </div>
+          <div class="doc-card" style="--rotate: 0deg">
+            <img src="public/media/fitness.png" alt="Working out">
+            <div class="doc-card-info">
+              <span class="doc-card-title">working out</span>
+              <span class="doc-card-stat">STORY-DRIVEN</span>
+            </div>
+          </div>
+          <div class="doc-card" style="--rotate: 4deg">
+            <img src="public/media/korea.png" alt="Living in Korea">
+            <div class="doc-card-info">
+              <span class="doc-card-title">living in Korea</span>
+              <span class="doc-card-stat">TRAVEL & IDENTITY</span>
+            </div>
+          </div>
+          <div class="doc-card" style="--rotate: 8deg">
+            <img src="public/media/life.png" alt="Small thoughts on life">
+            <div class="doc-card-info">
+              <span class="doc-card-title">small thoughts on life</span>
+              <span class="doc-card-stat">BRAND STORY</span>
+            </div>
+          </div>
+        </div>
+        <div class="documenting-stats">
+          <div class="doc-stat">
+            <span class="doc-stat-number">160K</span>
+            <span class="doc-stat-label">TOP VIDEO VIEWS</span>
+          </div>
+          <div class="doc-stat">
+            <span class="doc-stat-number">~9K</span>
+            <span class="doc-stat-label">SUBSCRIBERS</span>
+          </div>
+          <div class="doc-stat">
+            <span class="doc-stat-number">+ films</span>
+            <span class="doc-stat-label">SHORT STORIES SHOT</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: CLIENT FILMS -->
+    <section class="section section--films" id="films" data-chapter="CHAPTER FOUR">
+      <div class="films-content">
+        <div class="films-left">
+          <span class="chapter-label">CHAPTER FOUR</span>
+          <h2 class="section-title-large">client films</h2>
+          <p class="films-desc">Outside of building apps, I shoot promotional videos for brands and people. From
+            vertical lifestyle reels to cinematic brand reveals — I handle shooting, editing, and color grading end to
+            end.</p>
+          <div class="films-details">
+            <div class="films-detail">
+              <span class="detail-label">TOOLS</span>
+              <span class="detail-value">DJI Osmo Pocket 3<br>DaVinci Resolve</span>
+            </div>
+            <div class="films-detail">
+              <span class="detail-label">STYLE</span>
+              <span class="detail-value">cinematic<br>brand & storytelling</span>
+            </div>
+          </div>
+        </div>
+        <div class="films-right">
+          <div class="film-card film-card--large">
+            <video autoplay muted loop playsinline>
+              <source src="public/media/teaser.mp4" type="video/mp4">
+            </video>
+            <div class="film-card-info">
+              <span class="film-card-title">TEASER · MSU BAJA RACING</span>
+              <span class="film-card-desc">brand & content lead — facility film + car reveal.</span>
+            </div>
+          </div>
+          <div class="film-card film-card--small">
+            <video autoplay muted loop playsinline>
+              <source src="public/media/devious.mp4" type="video/mp4">
+            </video>
+            <div class="film-card-info">
+              <span class="film-card-title">REEL · CLIENT WORK</span>
+              <span class="film-card-desc">shoot, edit, grade.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: MOTORSPORT & RACING -->
+    <section class="section section--motorsport" id="motorsport" data-chapter="CHAPTER FIVE">
+      <div class="motorsport-content">
+        <div class="motorsport-header">
+          <span class="chapter-label">CHAPTER FIVE</span>
+          <h2 class="section-title-xl motorsport-title">Motorsport & Racing</h2>
+          <p class="motorsport-subtitle">As a hobby, I'm into motorsports and built a kart track analyzer for better
+            karting performance.</p>
+        </div>
+        <div class="motorsport-body">
+          <div class="motorsport-image">
+            <img src="public/media/kart-analyzer.png" alt="Kart Track Analyzer screenshot">
+          </div>
+          <div class="motorsport-info">
+            <h3 class="motorsport-app-title">Kart Track Analyzer</h3>
+            <p class="motorsport-app-desc">Draw a circuit and get an instant racing line with estimated corner speeds
+              and braking zones. Built to visualize how curvature and grip affect lap time.</p>
+            <div class="motorsport-cta">
+              <a href="#" class="btn-primary">TRY ANALYZER</a>
+              <span class="motorsport-tech">React • Canvas • Physics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: CONTACT -->
+    <section class="section section--contact" id="contact" data-chapter="CHAPTER SIX">
+      <div class="contact-content">
+        <span class="chapter-label">CHAPTER SIX</span>
+        <h2 class="section-title-xl contact-title">let's start<br>something</h2>
+        <p class="contact-subtitle">I'm open to collaborations on products, film, or anything that looks interesting. If
+          you think we should work together, reach out!</p>
+        <a href="mailto:hello@thebenkim.com" class="btn-outline">get in touch</a>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
