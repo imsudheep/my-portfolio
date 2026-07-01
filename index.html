@@ -7,7 +7,16 @@
   <title>Sudheep Here</title>
   <meta name="description" content="Sudheep Sivakumar — building apps, films, and a life worth replaying.">
   <link rel="icon" href="/favicon.ico">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2">
+  <script>
+    window.addEventListener('error', function(e) {
+      console.error('Captured Error:', e.message, 'at', e.filename, 'line', e.lineno);
+      const errDiv = document.createElement('div');
+      errDiv.style.cssText = 'position:fixed;top:10px;left:10px;right:10px;background:#ef4444;color:white;padding:12px;z-index:99999;font-family:monospace;font-size:12px;border-radius:6px;box-shadow:0 4px 6px rgba(0,0,0,0.15);line-height:1.4;';
+      errDiv.innerHTML = '<strong>JS Error:</strong> ' + e.message + '<br><small>' + e.filename + ':' + e.lineno + '</small>';
+      document.body.appendChild(errDiv);
+    });
+  </script>
 </head>
 
 <body>
@@ -65,7 +74,7 @@
             <span class="hero-name-line">I'm</span>
             <span class="hero-name-line">Sudheep</span>
           </h1>
-          <p class="hero-tagline">An undergraduate student passionate about web development.</p>
+          <p class="hero-tagline">An undergraduate student passionate about <span class="apple-selection">web development.<span class="selection-handle handle-start"></span><span class="selection-handle handle-end"></span></span></p>
 
 
           <div class="hero-education">
@@ -710,12 +719,15 @@
     <section class="section section--about" id="about" data-chapter="CHAPTER FIVE">
       <div class="about-content">
         <div class="about-left">
-          <h2 class="about-heading">About Me</h2>
+          <div class="about-left-top">
+            <span class="chapter-label">ABOUT ME</span>
+            <h2 class="section-title-xl">who am i?</h2>
+          </div>
         </div>
         <div class="about-right">
-          <p class="about-large-text">
-            I'm Sudheep — an undergraduate student passionate about web development, design, and storytelling. Based in Coimbatore, India, I build web and mobile apps, shoot and edit films, and explore the intersection of code and creativity. When I'm not studying or working on projects, you'll find me on the track or behind a camera.
-          </p>
+          <h2 class="about-main-text">
+            I'm that guy in every class who somehow ends up building the project everyone was only talking about. I love turning random ideas into things people can actually click, explore, and use. Most of my free time disappears into redesigning interfaces, polishing tiny details, and building side projects I never planned to start. I'm still learning every day, and that's my favorite part—there's always something new to figure out. My goal is simple: build products people genuinely enjoy using.
+          </h2>
         </div>
       </div>
     </section>
@@ -759,7 +771,7 @@
     </section>
   </main>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 
 </html>

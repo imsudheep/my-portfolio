@@ -17,6 +17,7 @@
   function init() {
     updateDots(0);
     initMobileDock();
+    initAboutScrollAnimation();
   }
 
   // ---- Navigate to section (smooth scroll) ----
@@ -430,84 +431,260 @@
   const maximizeBtn = document.getElementById('finderMaximizeBtn');
 
   // Icons SVGs
-  const svgFolder = `<svg viewBox="0 0 24 24" class="folder-icon folder-blue-icon" fill="currentColor">
-    <path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/>
-  </svg>`;
-
-  const svgFile = (iconClass) => {
-    let color = "#78909c";
-    if (iconClass === "file-react") color = "#00d8ff";
-    else if (iconClass === "file-css") color = "#29b6f6";
-    else if (iconClass === "file-html") color = "#ff7043";
-    else if (iconClass === "file-md") color = "#ab47bc";
-    else if (iconClass === "file-json") color = "#ffa726";
-    else if (iconClass === "file-typescript") color = "#1976d2";
-    else if (iconClass === "file-pdf") color = "#e53935";
-    else if (iconClass === "file-img") color = "#26a69a";
-    else if (iconClass === "file-chrome") color = "#4285F4";
-    else if (iconClass === "file-github") color = "#333333";
-
-    if (iconClass === "file-chrome") {
-      return `<svg viewBox="0 0 24 24" class="file-icon" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="12" cy="12" r="10" fill="#4285F4"/>
-        <path d="M4.21 7.5 A9 9 0 0 1 19.79 7.5 L12 12 Z" fill="#EA4335"/>
-        <path d="M19.79 7.5 A9 9 0 0 1 12 21 L12 12 Z" fill="#FBBC05"/>
-        <path d="M12 21 A9 9 0 0 1 4.21 7.5 L12 12 Z" fill="#34A853"/>
-        <circle cx="12" cy="12" r="3" fill="#ffffff"/>
-        <circle cx="12" cy="12" r="2.5" fill="#4285F4"/>
-      </svg>`;
-    }
-
-    if (iconClass === "file-github") {
-      return `<svg viewBox="0 0 24 24" class="file-icon" fill="#333333" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.934.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
-      </svg>`;
-    }
-
-    if (iconClass === "file-react" || iconClass === "file-typescript" || iconClass === "file-js") {
-      return `<svg viewBox="0 0 24 24" class="file-icon" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
-        <polyline points="14 2 14 8 20 8"></polyline>
-        <circle cx="12" cy="14" r="3" stroke="${color}" fill="none"></circle>
-      </svg>`;
-    }
-
-    if (iconClass === "file-css" || iconClass === "file-html") {
-      return `<svg viewBox="0 0 24 24" class="file-icon" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
-        <polyline points="14 2 14 8 20 8"></polyline>
-        <polyline points="8 15 11 12 8 9"></polyline>
-        <line x1="12" y1="15" x2="15" y2="15"></line>
-      </svg>`;
-    }
-
-    if (iconClass === "file-text") {
-      return `<svg viewBox="0 0 24 24" class="file-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2Z" fill="#ffffff" stroke="${color}" stroke-width="1.5"/>
-        <path d="M14 2v6h6" fill="none" stroke="${color}" stroke-width="1.5"/>
-        <line x1="8" y1="12" x2="16" y2="12" stroke="${color}" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="8" y1="15" x2="14" y2="15" stroke="${color}" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="8" y1="18" x2="12" y2="18" stroke="${color}" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>`;
-    }
-
-    if (iconClass === "file-img") {
-      return `<svg viewBox="0 0 24 24" class="file-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2Z" fill="#ffffff" stroke="${color}" stroke-width="1.5"/>
-        <path d="M14 2v6h6" fill="none" stroke="${color}" stroke-width="1.5"/>
-        <circle cx="9" cy="9" r="1.5" fill="${color}"/>
-        <path d="M6 17l2.5-3.5 2 2 2.5-2.5 3 4H6Z" fill="${color}" opacity="0.3" stroke="${color}" stroke-width="0.8"/>
-      </svg>`;
-    }
-
-    return `<svg viewBox="0 0 24 24" class="file-icon" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
-      <polyline points="14 2 14 8 20 8"></polyline>
-      <line x1="16" y1="13" x2="8" y2="13"></line>
-      <line x1="16" y1="17" x2="8" y2="17"></line>
-      <polyline points="10 9 9 9 8 9"></polyline>
+  // Icons SVGs
+  const getFolderSvg = (appIconUrl = '') => {
+    const rand = Math.floor(Math.random() * 1000000);
+    const backId = `folderBack_${rand}`;
+    const frontId = `folderFront_${rand}`;
+    const highlightId = `folderHighlight_${rand}`;
+    const shadowId = `folderShadow_${rand}`;
+    
+    return `<svg viewBox="0 0 48 38" class="folder-icon folder-blue-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="${backId}" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#00a2f3" />
+          <stop offset="100%" stop-color="#055fa3" />
+        </linearGradient>
+        <linearGradient id="${frontId}" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#55c2ff" />
+          <stop offset="100%" stop-color="#0c7ed2" />
+        </linearGradient>
+        <linearGradient id="${highlightId}" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#bfeaff" stop-opacity="0.8"/>
+          <stop offset="100%" stop-color="#55c2ff" stop-opacity="0.2"/>
+        </linearGradient>
+        <filter id="${shadowId}" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#001830" flood-opacity="0.3"/>
+        </filter>
+      </defs>
+      <!-- Back flap with tab -->
+      <path d="M 3 8 
+               C 3 6, 4.5 4.5, 6.5 4.5 
+               L 17 4.5 
+               C 19.5 4.5, 21.5 6, 23 8 
+               L 24.5 10 
+               L 42 10 
+               C 44 10, 45 11.5, 45 13.5 
+               L 45 32 
+               C 45 34, 44 35, 42 35 
+               L 6 35 
+               C 4 35, 3 34, 3 32 
+               Z" fill="url(#${backId})"/>
+      <!-- Inside content (a subtle white/light paper sheet peaking out slightly) -->
+      <path d="M 10 9 
+               L 38 9 
+               C 39.5 9, 40 9.5, 40 11 
+               L 40 18 
+               L 8 18 
+               L 8 11 
+               C 8 9.5, 8.5 9, 10 9 
+               Z" fill="#ffffff" opacity="0.75" />
+      <!-- Front flap -->
+      <path d="M 3 13 
+               C 3 11, 4.5 10.5, 6.5 10.5 
+               L 41.5 10.5 
+               C 43.5 10.5, 45 11, 45 13 
+               L 45 32 
+               C 45 34, 43.5 35, 41.5 35 
+               L 6.5 35 
+               C 4.5 35, 3 34, 3 32 
+               Z" fill="url(#${frontId})" filter="url(#${shadowId})"/>
+      <!-- Top lip highlight on front flap -->
+      <path d="M 3.2 13.5 
+               C 3.2 11.5, 4.7 11, 6.5 11 
+               L 41.5 11 
+               C 43.3 11, 44.8 11.5, 44.8 13.5 
+               L 44.8 15 
+               L 3.2 15 
+               Z" fill="url(#${highlightId})"/>
+      <!-- Embedded App Icon (iOS style / custom front placement) -->
+      ${appIconUrl ? `
+      <g transform="translate(18, 17)">
+        <rect x="0" y="0" width="12" height="12" rx="2.5" fill="#ffffff" filter="url(#${shadowId})"/>
+        <image href="${appIconUrl}" x="0.8" y="0.8" width="10.4" height="10.4" clip-path="url(#appIconClip_${rand})"/>
+        <clipPath id="appIconClip_${rand}">
+          <rect x="0.8" y="0.8" width="10.4" height="10.4" rx="1.8"/>
+        </clipPath>
+      </g>
+      ` : ''}
     </svg>`;
   };
+
+  const getFileSvg = (iconClass, name = '') => {
+    let ext = "";
+    if (name) {
+      ext = name.split('.').pop().split(' ').shift().toUpperCase();
+      if (ext.includes('(')) ext = ext.split('(')[0].trim();
+    }
+    if (!ext) {
+      if (iconClass === "file-react") ext = "JSX";
+      else if (iconClass === "file-js") ext = "JS";
+      else if (iconClass === "file-typescript") ext = "TS";
+      else if (iconClass === "file-css") ext = "CSS";
+      else if (iconClass === "file-html" || iconClass === "file-chrome") ext = "HTML";
+      else if (iconClass === "file-json") ext = "JSON";
+      else if (iconClass === "file-pdf") ext = "PDF";
+      else if (iconClass === "file-img") ext = "PNG";
+      else if (iconClass === "file-github") ext = "GIT";
+      else ext = "FILE";
+    }
+
+    const rand = Math.floor(Math.random() * 1000000);
+    const bgId = `fileBg_${rand}`;
+    const foldId = `fileFold_${rand}`;
+    const fileShadowId = `fileShadow_${rand}`;
+    const logoGradId1 = `logoGrad1_${rand}`;
+    const logoGradId2 = `logoGrad2_${rand}`;
+    const logoGradId3 = `logoGrad3_${rand}`;
+
+    let docColorStart = "#ffffff";
+    let docColorEnd = "#f5f5f7";
+    let foldColorStart = "#ffffff";
+    let foldColorEnd = "#e5e5ea";
+    let strokeColor = "#d1d1d6";
+    
+    let contentHtml = "";
+    
+    if (iconClass === "file-chrome") {
+      contentHtml = `
+        <g transform="translate(18, 30) scale(0.5)">
+          <circle cx="24" cy="24" r="12" fill="#ffffff" />
+          <path d="M24,12H44.7812a23.9939,23.9939,0,0,0-41.5639.0029L13.6079,30l.0093-.0024A11.9852,11.9852,0,0,1,24,12Z" fill="url(#${logoGradId1})" />
+          <circle cx="24" cy="24" r="9.5" fill="#1a73e8" />
+          <path d="M34.3913,30.0029,24.0007,48A23.994,23.994,0,0,0,44.78,12.0031H23.9989l-.0025.0093A11.985,11.985,0,0,1,34.3913,30.0029Z" fill="url(#${logoGradId2})" />
+          <path d="M13.6086,30.0031,3.218,12.006A23.994,23.994,0,0,0,24.0025,48L34.3931,30.0029l-.0067-.0068a11.9852,11.9852,0,0,0-10.3839,18Z" fill="url(#${logoGradId3})" />
+          <circle cx="24" cy="24" r="7.5" fill="#ffffff" />
+          <circle cx="24" cy="24" r="5.5" fill="#1a73e8" />
+        </g>
+        <rect x="14" y="60" width="32" height="8" rx="2" fill="#4285F4" />
+        <text x="30" y="66" fill="#ffffff" font-size="5.5" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-weight="bold" text-anchor="middle">HTML</text>
+      `;
+    } else if (iconClass === "file-react") {
+      contentHtml = `
+        <g transform="translate(18, 26) scale(0.5)">
+          <ellipse cx="24" cy="24" rx="20" ry="7.5" fill="none" stroke="#00d8ff" stroke-width="2.5" transform="rotate(30 24 24)" />
+          <ellipse cx="24" cy="24" rx="20" ry="7.5" fill="none" stroke="#00d8ff" stroke-width="2.5" transform="rotate(90 24 24)" />
+          <ellipse cx="24" cy="24" rx="20" ry="7.5" fill="none" stroke="#00d8ff" stroke-width="2.5" transform="rotate(150 24 24)" />
+          <circle cx="24" cy="24" r="3.5" fill="#00d8ff" />
+        </g>
+        <rect x="14" y="60" width="32" height="8" rx="2" fill="#00d8ff" />
+        <text x="30" y="66" fill="#000000" font-size="5.5" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-weight="bold" text-anchor="middle">${ext}</text>
+      `;
+    } else if (iconClass === "file-js") {
+      contentHtml = `
+        <g transform="translate(20, 28) scale(0.85)">
+          <rect x="0" y="0" width="24" height="24" rx="3.5" fill="#f7df1e" />
+          <text x="21" y="21" fill="#000000" font-size="11.5" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-weight="900" text-anchor="end">JS</text>
+        </g>
+        <rect x="14" y="60" width="32" height="8" rx="2" fill="#f7df1e" />
+        <text x="30" y="66" fill="#000000" font-size="5.5" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-weight="bold" text-anchor="middle">${ext}</text>
+      `;
+    } else if (iconClass === "file-typescript") {
+      contentHtml = `
+        <g transform="translate(20, 28) scale(0.85)">
+          <rect x="0" y="0" width="24" height="24" rx="3.5" fill="#3178c6" />
+          <text x="21" y="21" fill="#ffffff" font-size="11.5" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-weight="bold" text-anchor="end">TS</text>
+        </g>
+        <rect x="14" y="60" width="32" height="8" rx="2" fill="#3178c6" />
+        <text x="30" y="66" fill="#ffffff" font-size="5.5" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-weight="bold" text-anchor="middle">${ext}</text>
+      `;
+    } else if (iconClass === "file-css") {
+      contentHtml = `
+        <g transform="translate(22, 28) scale(0.8)">
+          <path d="M3 2 L17 2 L15.5 17 L10 19 L4.5 17 Z" fill="#29b6f6"/>
+          <path d="M10 2 L17 2 L15.5 17 L10 19 Z" fill="#0288d1"/>
+          <path d="M6 5 L14 5 L13.5 10 L6.5 10 L7 13 L10 14 L13 13 L13.2 11 L15 11 L14.7 15 L10 16.5 L5.3 15 L4.7 9 L11.5 9 L11.7 7 L6.2 7 Z" fill="#ffffff"/>
+        </g>
+        <rect x="14" y="60" width="32" height="8" rx="2" fill="#29b6f6" />
+        <text x="30" y="66" fill="#ffffff" font-size="5.5" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-weight="bold" text-anchor="middle">${ext}</text>
+      `;
+    } else if (iconClass === "file-json") {
+      contentHtml = `
+        <text x="30" y="44" fill="#ab47bc" font-size="18" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-weight="bold" text-anchor="middle">{ }</text>
+        <rect x="14" y="60" width="32" height="8" rx="2" fill="#ab47bc" />
+        <text x="30" y="66" fill="#ffffff" font-size="5.5" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-weight="bold" text-anchor="middle">${ext}</text>
+      `;
+    } else if (iconClass === "file-pdf") {
+      contentHtml = `
+        <g transform="translate(20, 28) scale(0.85)">
+          <rect x="2" y="2" width="20" height="20" rx="3" fill="#e53935" />
+          <text x="12" y="15" fill="#ffffff" font-size="8" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-weight="bold" text-anchor="middle">PDF</text>
+        </g>
+        <rect x="14" y="60" width="32" height="8" rx="2" fill="#e53935" />
+        <text x="30" y="66" fill="#ffffff" font-size="5.5" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-weight="bold" text-anchor="middle">PDF</text>
+      `;
+    } else if (iconClass === "file-github") {
+      contentHtml = `
+        <g transform="translate(18, 25) scale(0.5)">
+          <path d="M24 4C12.95 4 4 12.95 4 24c0 8.84 5.73 16.33 13.68 18.98.83.15 1.13-.36 1.13-.8 0-.39-.01-1.43-.02-2.8-5.56 1.21-6.74-2.68-6.74-2.68-.91-2.31-2.22-2.92-2.22-2.92-1.82-1.25.14-1.22.14-1.22 2.01.14 3.07 2.06 3.07 2.06 1.79 3.06 4.69 2.18 5.83 1.67.18-1.3.7-2.18 1.28-2.68-4.44-.5-9.11-2.22-9.11-9.88 0-2.18.78-3.97 2.06-5.37-.21-.5-.89-2.54.2-5.3 0 0 1.68-.54 5.5 2.05A19.06 19.06 0 0 1 24 13.3c1.7.01 3.4.23 5 .67 3.82-2.59 5.5-2.05 5.5-2.05 1.09 2.76.41 4.8.2 5.3 1.28 1.4 2.06 3.19 2.06 5.37 0 7.68-4.68 9.37-9.14 9.87.72.62 1.37 1.85 1.37 3.73 0 2.7-.02 4.87-.02 5.54 0 .45.3.96 1.14.8C38.28 40.32 44 32.84 44 24c0-11.05-8.95-20-20-20z" fill="#333333" />
+        </g>
+        <rect x="14" y="60" width="32" height="8" rx="2" fill="#333333" />
+        <text x="30" y="66" fill="#ffffff" font-size="5.5" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-weight="bold" text-anchor="middle">GIT</text>
+      `;
+    } else {
+      contentHtml = `
+        <rect x="18" y="28" width="24" height="2" rx="1" fill="#aeaeae" opacity="0.5" />
+        <rect x="18" y="34" width="24" height="2" rx="1" fill="#aeaeae" opacity="0.5" />
+        <rect x="18" y="40" width="18" height="2" rx="1" fill="#aeaeae" opacity="0.5" />
+        <rect x="18" y="46" width="14" height="2" rx="1" fill="#aeaeae" opacity="0.5" />
+        <rect x="14" y="60" width="32" height="8" rx="2" fill="#78909c" />
+        <text x="30" y="66" fill="#ffffff" font-size="5.5" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-weight="bold" text-anchor="middle">${ext}</text>
+      `;
+    }
+
+    return `<svg viewBox="0 0 60 80" class="file-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="${bgId}" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="${docColorStart}" />
+          <stop offset="100%" stop-color="${docColorEnd}" />
+        </linearGradient>
+        <linearGradient id="${foldId}" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="${foldColorStart}" />
+          <stop offset="100%" stop-color="${foldColorEnd}" />
+        </linearGradient>
+        <linearGradient id="${logoGradId1}" x1="3.2" y1="15" x2="44.8" y2="15" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#d93025" />
+          <stop offset="100%" stop-color="#ea4335" />
+        </linearGradient>
+        <linearGradient id="${logoGradId2}" x1="20.7" y1="47.7" x2="41.5" y2="11.7" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#fcc934" />
+          <stop offset="100%" stop-color="#fbbc04" />
+        </linearGradient>
+        <linearGradient id="${logoGradId3}" x1="26.6" y1="46.5" x2="5.8" y2="10.5" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#1e8e3e" />
+          <stop offset="100%" stop-color="#34a853" />
+        </linearGradient>
+        <filter id="${fileShadowId}" x="-20%" y="-15%" width="140%" height="135%">
+          <feDropShadow dx="0" dy="2.5" stdDeviation="2.5" flood-color="#000000" flood-opacity="0.15" />
+        </filter>
+      </defs>
+      <!-- File page path -->
+      <path d="M 14 4 
+               L 44 4 
+               L 56 16 
+               L 56 73 
+               C 56 75, 54 76.5, 52 76.5 
+               L 14 76.5 
+               C 12 76.5, 10 75, 10 73 
+               L 10 7 
+               C 10 5, 12 4, 14 4 
+               Z" 
+            fill="url(#${bgId})" 
+            stroke="${strokeColor}" 
+            stroke-width="0.8" 
+            filter="url(#${fileShadowId})" />
+      <!-- Dog-ear fold shadow -->
+      <path d="M 44 4 L 44 16 L 56 16 Z" fill="#d1d1d6" opacity="0.6" />
+      <!-- Dog-ear folded corner flap -->
+      <path d="M 44 4 L 56 16 L 44 16 Z" fill="url(#${foldId})" stroke="${strokeColor}" stroke-width="0.5" />
+      
+      <!-- Inside Brand Content -->
+      ${contentHtml}
+    </svg>`;
+  };
+
+  const svgFolder = getFolderSvg();
+  const svgFile = (iconClass, name = '') => getFileSvg(iconClass, name);
 
   function updateNavArrows() {
     if (historyPointer > 0) {
@@ -1009,7 +1186,8 @@
         let tagColor = "";
 
         if (currentLocation === "root" || currentLocation.startsWith("location-") || currentLocation.startsWith("tag-") || currentLocation === "shared") {
-          macIconHtml = svgFolder;
+          const appIcon = (item.project && item.project.icon) ? item.project.icon : '';
+          macIconHtml = getFolderSvg(appIcon);
           if (item.project && item.project.tag) {
             hasTagDot = true;
             if (item.project.tag === "tag-featured") tagColor = "var(--mac-yellow)";
@@ -1017,23 +1195,18 @@
             else if (item.project.tag === "tag-complete") tagColor = "var(--mac-green)";
           }
         } else {
-          macIconHtml = isFolder ? svgFolder : svgFile(item.iconClass);
+          macIconHtml = isFolder ? getFolderSvg() : (item.isImage ? `
+            <div class="mac-file--img">
+              <img src="${item.imageSrc}" class="mac-file-img-preview" alt="" />
+            </div>
+          ` : getFileSvg(item.iconClass, item.name));
         }
 
         // --- iOS Icons ---
         let iosIconHtml = "";
         if (isFolder) {
           const appIcon = (item.project && item.project.icon) ? item.project.icon : '';
-          iosIconHtml = `
-            <div class="ios-folder">
-              <div class="ios-folder-back">
-                <div class="ios-folder-tab"></div>
-              </div>
-              <div class="ios-folder-front">
-                ${appIcon ? `<img src="${appIcon}" class="ios-folder-app-icon" alt="" />` : ''}
-              </div>
-            </div>
-          `;
+          iosIconHtml = getFolderSvg(appIcon);
         } else {
           if (item.isImage) {
             iosIconHtml = `
@@ -1042,20 +1215,7 @@
               </div>
             `;
           } else {
-            const ext = item.name.split('.').pop().split(' ').shift().toUpperCase() || 'FILE';
-            const badgeClass = item.iconClass || 'file-generic';
-            iosIconHtml = `
-              <div class="ios-file">
-                <div class="ios-file-sheet">
-                  <div class="ios-file-lines">
-                    <span class="line-sm"></span>
-                    <span class="line-md"></span>
-                    <span class="line-lg"></span>
-                  </div>
-                  <span class="ios-file-badge ${badgeClass}">${ext}</span>
-                </div>
-              </div>
-            `;
+            iosIconHtml = getFileSvg(item.iconClass, item.name);
           }
         }
 
@@ -1136,11 +1296,16 @@
         let sizeText = "";
 
         if (currentLocation === "root") {
-          iconHtml = svgFolder;
+          const appIcon = (item.project && item.project.icon) ? item.project.icon : '';
+          iconHtml = getFolderSvg(appIcon);
           kindText = item.project.type;
           sizeText = "--";
         } else {
-          iconHtml = isFolder ? svgFolder : svgFile(item.iconClass);
+          iconHtml = isFolder ? getFolderSvg() : (item.isImage ? `
+            <div class="mac-file--img list-view-img">
+              <img src="${item.imageSrc}" class="mac-file-img-preview" alt="" />
+            </div>
+          ` : getFileSvg(item.iconClass, item.name));
           kindText = isFolder ? "Folder" : (item.kind || "File");
           sizeText = isFolder ? "--" : (item.size || "");
         }
@@ -1199,7 +1364,11 @@
       const items = project.files;
       items.forEach(item => {
         const isFolder = item.type === "folder";
-        const icon = isFolder ? svgFolder : svgFile(item.iconClass);
+        const icon = isFolder ? getFolderSvg() : (item.isImage ? `
+          <div class="mac-file--img column-view-img">
+            <img src="${item.imageSrc}" class="mac-file-img-preview" alt="" />
+          </div>
+        ` : getFileSvg(item.iconClass, item.name));
         const isSelected = selectedItem && selectedItem.name === item.name;
 
         const colItem = document.createElement('div');
@@ -1235,7 +1404,7 @@
             ];
 
             subItems.forEach(subItem => {
-              const subIcon = svgFile(subItem.iconClass);
+              const subIcon = getFileSvg(subItem.iconClass, subItem.name);
               const subColItem = document.createElement('div');
               subColItem.className = "column-item";
               subColItem.innerHTML = `
@@ -1770,6 +1939,123 @@
         statsContainer.classList.add('visible');
       }
     }
+  }
+
+  // ---- About scroll typing animation ----
+  function initAboutScrollAnimation() {
+    console.log('initAboutScrollAnimation: Initializing...');
+    const element = document.querySelector('.about-main-text');
+    
+    if (!element) {
+      console.error('initAboutScrollAnimation: .about-main-text element not found.');
+      return;
+    }
+
+    const originalText = element.textContent;
+    
+    // Set up accessibility labels so screen readers read the full text properly
+    element.setAttribute('aria-label', originalText.trim().replace(/\s+/g, ' '));
+    
+    // Clear element content and create container
+    element.innerHTML = '';
+    const revealContainer = document.createElement('span');
+    revealContainer.setAttribute('aria-hidden', 'true');
+    revealContainer.className = 'about-text-reveal';
+    element.appendChild(revealContainer);
+
+    // Split text by double newlines to preserve paragraphs/breaks
+    const paragraphs = originalText.trim().split(/\n\s*\n/);
+    const chars = [];
+
+    paragraphs.forEach((pText, pIndex) => {
+      const normalizedPText = pText.trim().replace(/\s+/g, ' ');
+      const words = normalizedPText.split(' ');
+
+      words.forEach((wordText, wordIndex) => {
+        // Create a span for the word to prevent line breaks inside the word
+        const wordSpan = document.createElement('span');
+        wordSpan.style.whiteSpace = 'nowrap';
+        
+        // Split the word into characters
+        const wordChars = wordText.split('');
+        wordChars.forEach(char => {
+          const charSpan = document.createElement('span');
+          charSpan.textContent = char;
+          charSpan.className = 'about-scroll-char';
+          wordSpan.appendChild(charSpan);
+          chars.push(charSpan);
+        });
+
+        revealContainer.appendChild(wordSpan);
+
+        // Append space after the word (except after the very last word of the paragraph)
+        if (wordIndex < words.length - 1) {
+          const spaceSpan = document.createElement('span');
+          spaceSpan.textContent = ' ';
+          spaceSpan.className = 'about-scroll-char';
+          revealContainer.appendChild(spaceSpan);
+          chars.push(spaceSpan);
+        }
+      });
+
+      // Insert line breaks between paragraphs
+      if (pIndex < paragraphs.length - 1) {
+        const br1 = document.createElement('br');
+        const br2 = document.createElement('br');
+        revealContainer.appendChild(br1);
+        revealContainer.appendChild(br2);
+      }
+    });
+
+    console.log('initAboutScrollAnimation: Created character spans count:', chars.length);
+
+    // Update active characters on scroll
+    function updateReveal() {
+      const rect = element.getBoundingClientRect();
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 800;
+
+      // We want the reveal to start when the top of the text container is at 80% of the viewport height.
+      // We want the reveal to end when the bottom of the text container is at 30% of the viewport height.
+      const startScroll = viewportHeight * 0.8;
+      const endScroll = viewportHeight * 0.3;
+
+      const startTop = startScroll;
+      const endTop = endScroll - rect.height;
+
+      const totalDist = startTop - endTop;
+      const currentDist = startTop - rect.top;
+
+      let progress = currentDist / totalDist;
+      progress = Math.max(0, Math.min(1, progress));
+
+      // Guard against invalid viewport height or NaN division
+      if (isNaN(progress) || totalDist <= 0) {
+        progress = 1;
+      }
+
+      // Calculate how many characters should be active (black)
+      const totalChars = chars.length;
+      const activeCount = Math.floor(progress * totalChars);
+
+      for (let i = 0; i < totalChars; i++) {
+        if (i < activeCount) {
+          chars[i].classList.add('active');
+        } else {
+          chars[i].classList.remove('active');
+        }
+      }
+    }
+
+    // Register scroll and resize event listeners on both window and document to ensure compatibility
+    window.addEventListener('scroll', updateReveal, { passive: true });
+    document.addEventListener('scroll', updateReveal, { passive: true });
+    window.addEventListener('resize', updateReveal, { passive: true });
+    
+    // Also run on page fully loaded to ensure styles and layouts are resolved
+    window.addEventListener('load', updateReveal, { passive: true });
+    
+    updateReveal(); // Trigger initially
+    console.log('initAboutScrollAnimation: Initial setup complete. Event listeners attached.');
   }
 
   // ---- Init ----
