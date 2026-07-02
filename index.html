@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sudheep Here</title>
+  <meta name="description" content="Sudheep Sivakumar — building apps, films, and a life worth replaying.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="styles.css?v=2">
+  <script>
+    window.addEventListener('error', function(e) {
+      console.error('Captured Error:', e.message, 'at', e.filename, 'line', e.lineno);
+      const errDiv = document.createElement('div');
+      errDiv.style.cssText = 'position:fixed;top:10px;left:10px;right:10px;background:#ef4444;color:white;padding:12px;z-index:99999;font-family:monospace;font-size:12px;border-radius:6px;box-shadow:0 4px 6px rgba(0,0,0,0.15);line-height:1.4;';
+      errDiv.innerHTML = '<strong>JS Error:</strong> ' + e.message + '<br><small>' + e.filename + ':' + e.lineno + '</small>';
+      document.body.appendChild(errDiv);
+    });
+  </script>
+</head>
+
+<body>
+  <!-- ============ FIXED NAV ============ -->
+  <nav class="fixed-nav" id="fixedNav">
+    <div class="nav-logo">
+      <a href="#hero">
+        <span class="logo-text">SUDHEEP</span>
+        <span class="logo-text">HERE</span>
+      </a>
+    </div>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- ============ NAV OVERLAY ============ -->
+  <div class="nav-overlay" id="navOverlay">
+    <button class="nav-overlay-close" id="navOverlayClose" aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+        <path d="M18 6L6 18M6 6l12 12" />
+      </svg>
+    </button>
+    <div class="nav-overlay-content">
+      <a href="#hero" class="nav-overlay-link" data-index="0">Home</a>
+      <a href="#journey" class="nav-overlay-link" data-index="1">Journey</a>
+      <a href="#ventures" class="nav-overlay-link" data-index="2">Projects</a>
+      <a href="#content" class="nav-overlay-link" data-index="3">Skills</a>
+      <a href="#about" class="nav-overlay-link" data-index="4">About</a>
+      <a href="#contact" class="nav-overlay-link" data-index="5">Contact</a>
+    </div>
+  </div>
+
+  <!-- ============ DOT NAVIGATION ============ -->
+  <div class="dot-nav" id="dotNav">
+    <button class="dot active" data-index="0" aria-label="Go to hero"></button>
+    <button class="dot" data-index="1" aria-label="Go to journey"></button>
+    <button class="dot" data-index="2" aria-label="Go to ventures"></button>
+    <button class="dot" data-index="3" aria-label="Go to content"></button>
+    <button class="dot" data-index="4" aria-label="Go to about"></button>
+    <button class="dot" data-index="5" aria-label="Go to contact"></button>
+  </div>
+
+  <!-- ============ MAIN CONTENT ============ -->
+  <main class="page-container" id="pageContainer">
+
+    <!-- SECTION 0: HERO -->
+    <section class="section section--hero" id="hero" data-chapter="">
+      <div class="hero-content">
+        <div class="hero-left">
+          <p class="hero-label">Hello</p>
+          <h1 class="hero-name">
+            <span class="hero-name-line">I'm</span>
+            <span class="hero-name-line">Sudheep</span>
+          </h1>
+          <p class="hero-tagline">An undergraduate student passionate about <span class="apple-selection">web development.<span class="selection-handle handle-start"></span><span class="selection-handle handle-end"></span></span></p>
+
+
+          <div class="hero-education">
+            <span>SKACAS · BACHELOR’S IN COMPUTER SCIENCE</span>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="hero-circle" data-circle="track"></div>
+          <div class="hero-circle hero-circle--alt" data-circle="flee"></div>
+          <div class="hero-image-wrapper">
+            <img src="portfolio img.png" alt="Ben Kim portrait" class="hero-portrait">
+            <div class="hero-image-overlay">
+              <span class="hero-overlay-label">CHAPTER ONE</span>
+              <span class="hero-overlay-text">still learning, still building.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-hint">
+        <span>SCROLL TO EXPLORE</span>
+      </div>
+    </section>
+
+    <!-- SECTION 1: THE JOURNEY -->
+    <section class="section section--journey" id="journey" data-chapter="CHAPTER ONE">
+      <div class="journey-pin">
+        <div class="journey-content">
+          <div class="journey-left">
+            <h2 class="section-title-large">the<br>journey</h2>
+            <div class="journey-details">
+              <div class="journey-detail">
+                <span class="detail-label">BASE</span>
+                <span class="detail-value">Coimbatore, India</span>
+              </div>
+              <div class="journey-detail">
+                <span class="detail-label">DEGREE</span>
+                <span class="detail-value">Computer Science</span>
+              </div>
+              <div class="journey-detail">
+                <span class="detail-label">FOCUS</span>
+                <span class="detail-value">development · learning · peace</span>
+              </div>
+            </div>
+            <p class="journey-scroll-hint">scroll to move through the timeline →</p>
+          </div>
+          <div class="journey-right" id="journeyTimeline">
+            <div class="timeline-cards">
+              <div class="timeline-card" style="--rotate: -6deg; --delay: 0s">
+                <img src="https://www.thebenkim.com/media/msu.jpg" alt="MSU">
+                <div class="timeline-card-info">
+                  <span class="timeline-card-title">MSU · 2022</span>
+                  <span class="timeline-card-desc">Majoring in hospitality business at Michigan State.</span>
+                </div>
+              </div>
+              <div class="timeline-card" style="--rotate: 3deg; --delay: 0.1s">
+                <img src="Journey photos/music yt.png" alt="Hotel Front Desk">
+                <div class="timeline-card-info">
+                  <span class="timeline-card-title">HOTEL FRONT DESK · 2022</span>
+                  <span class="timeline-card-desc">Learning hospitality the hard way: late check-ins, angry guests, and
+                    fixing things on fly.</span>
+                </div>
+              </div>
+              <div class="timeline-card" style="--rotate: -4deg; --delay: 0.2s">
+                <img src="Journey photos/gaming.png" alt="First Lines of Code">
+                <div class="timeline-card-info">
+                  <span class="timeline-card-title">FIRST LINES OF CODE · 2023</span>
+                  <span class="timeline-card-desc">Googling React Native errors between lectures and night
+                    shifts.</span>
+                </div>
+              </div>
+              <div class="timeline-card" style="--rotate: 5deg; --delay: 0.3s">
+                <img src="Journey photos/first code.png" alt="Commercial & Marketing">
+                <div class="timeline-card-info">
+                  <span class="timeline-card-title">COMMERCIAL & MARKETING · 2024</span>
+                  <span class="timeline-card-desc">Promoting Dilemaa across campus.</span>
+                </div>
+              </div>
+              <div class="timeline-card" style="--rotate: -3deg; --delay: 0.4s">
+                <img src="Journey photos/school web.jpeg" alt="Dilemaa Launch">
+                <div class="timeline-card-info">
+                  <span class="timeline-card-title">DILEMAA LAUNCH · 2024</span>
+                  <span class="timeline-card-desc">First app on the App Store. 10K downloads in 3 months.</span>
+                </div>
+              </div>
+              <div class="timeline-card" style="--rotate: 4deg; --delay: 0.5s">
+                <img src="Journey photos/skacas redesign.png" alt="Travel">
+                <div class="timeline-card-info">
+                  <span class="timeline-card-title">TRAVEL · 2024</span>
+                  <span class="timeline-card-desc">Living in Korea, filming, and building from cafés.</span>
+                </div>
+              </div>
+              <div class="timeline-card" style="--rotate: -5deg; --delay: 0.6s">
+                <img src="https://www.thebenkim.com/media/pitch-win.jpg" alt="Pitch Win">
+                <div class="timeline-card-info">
+                  <span class="timeline-card-title">PITCH WIN · 2025</span>
+                  <span class="timeline-card-desc">Won the entrepreneurship pitch competition.</span>
+                </div>
+              </div>
+              <div class="timeline-card" style="--rotate: 2deg; --delay: 0.7s">
+                <img src="Journey photos/habit.png" alt="Nostalgia">
+                <div class="timeline-card-info">
+                  <span class="timeline-card-title">NOSTALGIA · 2025</span>
+                  <span class="timeline-card-desc">Built a conversational journal for people who feel burnt out.</span>
+                </div>
+              </div>
+              <div class="timeline-card" style="--rotate: -2deg; --delay: 0.8s">
+                <img src="https://www.thebenkim.com/media/nostalgia-mkt.jpg" alt="Nostalgia Marketing">
+                <div class="timeline-card-info">
+                  <span class="timeline-card-title">MARKETING · 2025</span>
+                  <span class="timeline-card-desc">Shooting cinematic promos for Nostalgia launch.</span>
+                </div>
+              </div>
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: VENTURES -->
+    <section class="section section--ventures" id="ventures" data-chapter="CHAPTER TWO">
+      <div class="ventures-content">
+        <!-- Left Stats Column -->
+        <div class="ventures-left">
+          <span class="chapter-label">CHAPTER TWO</span>
+          <h2 class="section-title-large">projects</h2>
+          <p class="ventures-subtitle">Think of this as my computer placed right in your hands — open it up and explore every project I've built. Each one has a story.</p>
+
+          <a href="https://github.com/imsudheep" target="_blank" class="btn-github-view">
+            <span>View on GitHub</span>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Finder App Right Side -->
+        <div class="ventures-finder-container">
+          <div class="finder-window" id="finderWindow">
+
+            <!-- Titlebar -->
+            <div class="finder-titlebar">
+              <div class="finder-controls">
+                <span class="control-btn control-btn--close" id="finderCloseBtn"></span>
+                <span class="control-btn control-btn--minimize" id="finderMinimizeBtn"></span>
+                <span class="control-btn control-btn--maximize" id="finderMaximizeBtn"></span>
+              </div>
+
+              <!-- Mobile back button (iOS style, hidden on desktop) -->
+              <button class="mobile-back-btn" id="mobileBackBtn" aria-label="Back">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#007aff" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+
+              <div class="finder-nav-arrows">
+                <button class="nav-arrow-btn disabled" id="finderBackBtn" aria-label="Back">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </button>
+                <button class="nav-arrow-btn disabled" id="finderForwardBtn" aria-label="Forward">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Mobile title (iOS style, hidden on desktop) -->
+              <span class="mobile-title" id="mobileTitle">Projects</span>
+
+              <div class="finder-path-breadcrumbs" id="finderTitlePath">
+                <svg viewBox="0 0 24 24" width="16" height="16" class="folder-blue-icon" fill="currentColor">
+                  <path
+                    d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z" />
+                </svg>
+                <span class="breadcrumb-item" data-path="root">Projects</span>
+              </div>
+
+              <div class="finder-search">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round" class="search-icon">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" id="finderSearchInput" placeholder="Search" aria-label="Search files and folders">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mic-icon">
+                  <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path>
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                  <line x1="12" y1="19" x2="12" y2="22"></line>
+                </svg>
+              </div>
+
+              <!-- Mobile search toggle (iOS style, hidden on desktop) -->
+              <button class="mobile-search-btn" id="mobileSearchBtn" aria-label="Options">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#007aff" stroke-width="2" class="ellipsis-circle-icon">
+                  <circle cx="12" cy="12" r="9" stroke="#007aff" stroke-width="2"></circle>
+                  <circle cx="8" cy="12" r="1.2" fill="#007aff"></circle>
+                  <circle cx="12" cy="12" r="1.2" fill="#007aff"></circle>
+                  <circle cx="16" cy="12" r="1.2" fill="#007aff"></circle>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Window Body -->
+            <div class="finder-body">
+              <!-- Sidebar -->
+              <aside class="finder-sidebar">
+                <div class="sidebar-group">
+                  <span class="sidebar-group-title">Favorites</span>
+                  <ul class="sidebar-list">
+                    <li class="sidebar-item active" data-sidebar="all" id="sidebarAll">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="folder-blue-icon">
+                        <path
+                          d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z" />
+                      </svg>
+                      <span>All Projects</span>
+                    </li>
+                    <li class="sidebar-item" data-sidebar="web" id="sidebarWeb">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path
+                          d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                        </path>
+                      </svg>
+                      <span>Web Apps</span>
+                    </li>
+                    <li class="sidebar-item" data-sidebar="mobile" id="sidebarMobile">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                        <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                      </svg>
+                      <span>Mobile Apps</span>
+                    </li>
+                    <li class="sidebar-item" data-sidebar="uiux" id="sidebarUIUX">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                          d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z">
+                        </path>
+                        <circle cx="7.5" cy="10.5" r="1.5" fill="currentColor"></circle>
+                        <circle cx="11.5" cy="7.5" r="1.5" fill="currentColor"></circle>
+                        <circle cx="16.5" cy="9.5" r="1.5" fill="currentColor"></circle>
+                        <circle cx="15.5" cy="14.5" r="1.5" fill="currentColor"></circle>
+                      </svg>
+                      <span>UI / UX</span>
+                    </li>
+
+                  </ul>
+                </div>
+
+                <div class="sidebar-group">
+                  <span class="sidebar-group-title">Locations</span>
+                  <ul class="sidebar-list">
+                    <li class="sidebar-item" data-sidebar="github" id="sidebarGithub">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                          d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                        </path>
+                      </svg>
+                      <span>GitHub</span>
+                    </li>
+                    <li class="sidebar-item" data-sidebar="clouddrive" id="sidebarCloud">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                      </svg>
+                      <span>Cloud Drive</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="sidebar-group">
+                  <span class="sidebar-group-title">Tags</span>
+                  <ul class="sidebar-list">
+                    <li class="sidebar-item" data-sidebar="tag-featured" id="sidebarTagFeatured">
+                      <span class="tag-dot tag-dot--yellow"></span>
+                      <span>Featured</span>
+                    </li>
+                    <li class="sidebar-item" data-sidebar="tag-inprogress" id="sidebarTagInProgress">
+                      <span class="tag-dot tag-dot--blue"></span>
+                      <span>In Progress</span>
+                    </li>
+                    <li class="sidebar-item" data-sidebar="tag-complete" id="sidebarTagComplete">
+                      <span class="tag-dot tag-dot--green"></span>
+                      <span>Complete</span>
+                    </li>
+                  </ul>
+                </div>
+              </aside>
+
+              <!-- Content Wrapper -->
+              <div class="finder-content-wrapper">
+                <!-- Main Explorer Area -->
+                <main class="finder-main" id="finderMainContent">
+                  <!-- Dynamic folders/files list will be injected here by JS -->
+                  <div class="finder-grid" id="finderFilesGrid"></div>
+
+                  <div class="finder-list-container" id="finderFilesList" style="display: none;">
+                    <table class="finder-list-table">
+                      <thead>
+                        <tr>
+                          <th class="col-name" id="sortHeaderName">Name</th>
+                          <th class="col-date" id="sortHeaderDate">Date Modified</th>
+                          <th class="col-size">Size</th>
+                          <th class="col-kind">Kind</th>
+                        </tr>
+                      </thead>
+                      <tbody id="finderListBody">
+                        <!-- Dynamic list items will be injected here by JS -->
+                      </tbody>
+                    </table>
+                  </div>
+                </main>
+
+                <!-- Right Preview Pane -->
+                <aside class="finder-preview" id="finderPreviewPane" style="display: none;">
+                  <!-- Dynamic file or folder preview details will be injected here by JS -->
+                </aside>
+              </div>
+
+              <!-- Mobile Bottom Tab Bar (iOS Files style, hidden on desktop) -->
+              <nav class="finder-bottom-bar">
+                <button class="bottom-bar-item" data-tab="recents" id="bottomBarRecents">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  <span>Recents</span>
+                </button>
+                <button class="bottom-bar-item" data-tab="shared" id="bottomBarShared">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                    <circle cx="12" cy="13" r="2"></circle>
+                    <path d="M8 18a4 4 0 0 1 8 0"></path>
+                  </svg>
+                  <span>Shared</span>
+                </button>
+                <button class="bottom-bar-item active" data-tab="browse" id="bottomBarBrowse">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/>
+                  </svg>
+                  <span>Browse</span>
+                </button>
+              </nav>
+            </div>
+
+            <!-- Statusbar -->
+            <footer class="finder-statusbar">
+              <div class="statusbar-path" id="finderStatusPath">
+                <span>Projects</span>
+              </div>
+              <div class="statusbar-info">
+                <span id="finderStatusItemCount">8 items</span>
+                <span class="statusbar-divider">,</span>
+                <span>23.4 GB available</span>
+              </div>
+              <div class="statusbar-zoom">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="9" y1="3" x2="9" y2="21"></line>
+                  <line x1="15" y1="3" x2="15" y2="21"></line>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="3" y1="15" x2="21" y2="15"></line>
+                </svg>
+                <input type="range" id="finderZoomSlider" min="50" max="100" value="70" aria-label="Icon size zoom">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="9" y1="3" x2="9" y2="21"></line>
+                  <line x1="15" y1="3" x2="15" y2="21"></line>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="3" y1="15" x2="21" y2="15"></line>
+                </svg>
+              </div>
+            </footer>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: SKILLS -->
+    <section class="section section--documenting" id="content" data-chapter="CHAPTER THREE">
+      <div class="documenting-content">
+        <div class="documenting-header">
+          <span class="chapter-label">MY SKILLS</span>
+          <h2 class="section-title-xl">things i build with</h2>
+          <p class="documenting-subtitle">Design. Code. Learn. Repeat. <br>
+            These are the technologies behind every project I've built so far.</p>
+        </div>
+        <div class="macos-dock-container">
+          <div class="macos-dock">
+            <!-- HTML -->
+            <div class="dock-item" data-name="HTML">
+              <div class="dock-icon-wrapper">
+                <img class="dock-icon" src="Doc icons/html.jpg" alt="HTML" />
+              </div>
+              <span class="dock-indicator active"></span>
+              <div class="dock-tooltip">
+                <div class="tooltip-title">HTML</div>
+                <div class="tooltip-stars">★★★★★</div>
+                <div class="tooltip-desc">Semantic, accessible markup. The foundation of every frontend project.</div>
+                <div class="tooltip-projects"><strong>Used in:</strong> Portfolio, School Website, College Website</div>
+              </div>
+            </div>
+
+            <!-- CSS -->
+            <div class="dock-item" data-name="CSS">
+              <div class="dock-icon-wrapper">
+                <img class="dock-icon" src="Doc icons/css-3.png" alt="CSS" />
+              </div>
+              <span class="dock-indicator"></span>
+              <div class="dock-tooltip">
+                <div class="tooltip-title">CSS</div>
+                <div class="tooltip-stars">★★★★★</div>
+                <div class="tooltip-desc">Styling, animations, responsive design. Crafting beautiful UIs with modern
+                  CSS.</div>
+                <div class="tooltip-projects"><strong>Used in:</strong> Portfolio, School Website, College Website</div>
+              </div>
+            </div>
+
+            <!-- JavaScript -->
+            <div class="dock-item" data-name="JavaScript">
+              <div class="dock-icon-wrapper">
+                <img class="dock-icon" src="Doc icons/js.png" alt="JavaScript" />
+              </div>
+              <span class="dock-indicator"></span>
+              <div class="dock-tooltip">
+                <div class="tooltip-title">JavaScript</div>
+                <div class="tooltip-stars">★★★★☆</div>
+                <div class="tooltip-desc">Interactivity, DOM manipulation, async logic. Core of dynamic web experiences.
+                </div>
+                <div class="tooltip-projects"><strong>Used in:</strong> Portfolio, School Website, College Website</div>
+              </div>
+            </div>
+
+            <!-- Python -->
+            <div class="dock-item" data-name="Python">
+              <div class="dock-icon-wrapper">
+                <img class="dock-icon" src="Doc icons/python.png" alt="Python" />
+              </div>
+              <span class="dock-indicator"></span>
+              <div class="dock-tooltip">
+                <div class="tooltip-title">Python</div>
+                <div class="tooltip-stars">★★★★☆</div>
+                <div class="tooltip-desc">Scripting, data processing, automation. Backend logic and tooling.</div>
+                <div class="tooltip-projects"><strong>Used in:</strong> Automation scripts, Data projects</div>
+              </div>
+            </div>
+
+            <!-- Antigravity -->
+            <div class="dock-item" data-name="Antigravity">
+              <div class="dock-icon-wrapper">
+                <img class="dock-icon" src="Doc icons/Google-Antigravity-Icon-Full-Color.png" alt="Antigravity" />
+              </div>
+              <span class="dock-indicator"></span>
+              <div class="dock-tooltip">
+                <div class="tooltip-title">Antigravity</div>
+                <div class="tooltip-stars">★★★☆☆</div>
+                <div class="tooltip-desc">Google's low-code platform for rapid prototyping and web experiments.</div>
+                <div class="tooltip-projects"><strong>Used in:</strong> Experimental projects, Prototypes</div>
+              </div>
+            </div>
+
+            <!-- Wix Studio -->
+            <div class="dock-item" data-name="Wix Studio">
+              <div class="dock-icon-wrapper">
+                <img class="dock-icon" src="Doc icons/wix.png" alt="Wix Studio" />
+              </div>
+              <span class="dock-indicator"></span>
+              <div class="dock-tooltip">
+                <div class="tooltip-title">Wix Studio</div>
+                <div class="tooltip-stars">★★★★☆</div>
+                <div class="tooltip-desc">Visual development with custom components. Building no-code solutions with
+                  code extensions.</div>
+                <div class="tooltip-projects"><strong>Used in:</strong> Client websites, Landing pages</div>
+              </div>
+            </div>
+
+            <!-- Figma -->
+            <div class="dock-item" data-name="Figma">
+              <div class="dock-icon-wrapper">
+                <img class="dock-icon" src="Doc icons/figma.png" alt="Figma" />
+              </div>
+              <span class="dock-indicator"></span>
+              <div class="dock-tooltip">
+                <div class="tooltip-title">Figma</div>
+                <div class="tooltip-stars">★★★★☆</div>
+                <div class="tooltip-desc">UI/UX design, prototyping, design systems. From wireframes to pixel-perfect
+                  mockups.</div>
+                <div class="tooltip-projects"><strong>Used in:</strong> Portfolio design, App prototypes</div>
+              </div>
+            </div>
+
+            <!-- GitHub -->
+            <div class="dock-item" data-name="GitHub">
+              <div class="dock-icon-wrapper">
+                <img class="dock-icon" src="Doc icons/github.png" alt="GitHub" />
+              </div>
+              <span class="dock-indicator"></span>
+              <div class="dock-tooltip">
+                <div class="tooltip-title">GitHub</div>
+                <div class="tooltip-stars">★★★★★</div>
+                <div class="tooltip-desc">Version control, collaboration, CI/CD. Managing code and deploying projects.
+                </div>
+                <div class="tooltip-projects"><strong>Used in:</strong> All projects — Portfolio, School Website, and
+                  more</div>
+              </div>
+            </div>
+
+            <div class="dock-divider"></div>
+
+            <!-- Resume -->
+            <div class="dock-item" data-name="Resume" id="dockResume">
+              <div class="dock-icon-wrapper">
+                <svg class="dock-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="5" y="5" width="90" height="90" rx="20" fill="#FFFFFF" />
+                  <rect x="20" y="12" width="60" height="76" rx="4" fill="#F5F5F5" stroke="#D1D5DB" stroke-width="2" />
+                  <rect x="28" y="24" width="44" height="6" rx="3" fill="#E5E7EB" />
+                  <rect x="28" y="36" width="44" height="4" rx="2" fill="#E5E7EB" />
+                  <rect x="28" y="44" width="44" height="4" rx="2" fill="#E5E7EB" />
+                  <rect x="28" y="52" width="32" height="4" rx="2" fill="#E5E7EB" />
+                  <rect x="28" y="64" width="44" height="4" rx="2" fill="#E5E7EB" />
+                  <rect x="28" y="72" width="28" height="4" rx="2" fill="#E5E7EB" />
+                </svg>
+              </div>
+              <div class="dock-tooltip">
+                <div class="tooltip-title">Resume</div>
+                <div class="tooltip-desc">Click to download my resume</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Swipeable Dock Container -->
+        <div class="macos-dock-mobile-container">
+          <div class="macos-dock-mobile">
+            <div class="mobile-dock-track">
+              <!-- Page 1 -->
+              <div class="mobile-dock-page" data-page="0">
+                <div class="mobile-dock-item">
+                  <div class="mobile-icon-wrapper">
+                    <img src="Doc icons/html.jpg" alt="HTML" class="mobile-dock-icon">
+                  </div>
+                  <span class="mobile-icon-name">HTML</span>
+                </div>
+                <div class="mobile-dock-item">
+                  <div class="mobile-icon-wrapper">
+                    <img src="Doc icons/css-3.png" alt="CSS" class="mobile-dock-icon">
+                  </div>
+                  <span class="mobile-icon-name">CSS</span>
+                </div>
+                <div class="mobile-dock-item">
+                  <div class="mobile-icon-wrapper">
+                    <img src="Doc icons/js.png" alt="JavaScript" class="mobile-dock-icon">
+                  </div>
+                  <span class="mobile-icon-name">JavaScript</span>
+                </div>
+                <div class="mobile-dock-item">
+                  <div class="mobile-icon-wrapper">
+                    <img src="Doc icons/python.png" alt="Python" class="mobile-dock-icon">
+                  </div>
+                  <span class="mobile-icon-name">Python</span>
+                </div>
+              </div>
+              
+              <!-- Page 2 -->
+              <div class="mobile-dock-page" data-page="1">
+                <div class="mobile-dock-item">
+                  <div class="mobile-icon-wrapper">
+                    <img src="Doc icons/Google-Antigravity-Icon-Full-Color.png" alt="Antigravity" class="mobile-dock-icon">
+                  </div>
+                  <span class="mobile-icon-name">Antigravity</span>
+                </div>
+                <div class="mobile-dock-item">
+                  <div class="mobile-icon-wrapper">
+                    <img src="Doc icons/wix.png" alt="Wix Studio" class="mobile-dock-icon">
+                  </div>
+                  <span class="mobile-icon-name">Wix Studio</span>
+                </div>
+                <div class="mobile-dock-item">
+                  <div class="mobile-icon-wrapper">
+                    <img src="Doc icons/figma.png" alt="Figma" class="mobile-dock-icon">
+                  </div>
+                  <span class="mobile-icon-name">Figma</span>
+                </div>
+                <div class="mobile-dock-item">
+                  <div class="mobile-icon-wrapper">
+                    <img src="Doc icons/github.png" alt="GitHub" class="mobile-dock-icon">
+                  </div>
+                  <span class="mobile-icon-name">GitHub</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Pagination dots -->
+          <div class="mobile-dock-pagination">
+            <span class="pagination-dot active" data-page="0"></span>
+            <span class="pagination-dot" data-page="1"></span>
+          </div>
+          
+          <!-- Swipe hint -->
+          <div class="mobile-dock-hint">
+            <span>Swipe to explore</span>
+            <svg class="hint-arrow" viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </div>
+
+        <div class="documenting-stats">
+          <div class="doc-stat">
+            <span class="doc-stat-number">10+</span>
+            <span class="doc-stat-label">PROJECTS BUILT</span>
+          </div>
+          <div class="doc-stat">
+            <span class="doc-stat-number">2+</span>
+            <span class="doc-stat-label">YEARS LEARNING</span>
+          </div>
+          <div class="doc-stat">
+            <span class="doc-stat-number">∞</span>
+            <span class="doc-stat-label">LEARNING</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: ABOUT ME -->
+    <section class="section section--about" id="about" data-chapter="CHAPTER FIVE">
+      <div class="about-content">
+        <div class="about-left">
+          <div class="about-left-top">
+            <span class="chapter-label">ABOUT ME</span>
+            <h2 class="section-title-xl">who am i?</h2>
+          </div>
+        </div>
+        <div class="about-right">
+          <h2 class="about-main-text">
+            I'm that guy in every class who somehow ends up building the project everyone was only talking about. I love turning random ideas into things people can actually click, explore, and use. Most of my free time disappears into redesigning interfaces, polishing tiny details, and building side projects I never planned to start. I'm still learning every day, and that's my favorite part—there's always something new to figure out. My goal is simple: build products people genuinely enjoy using.
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: CONTACT -->
+    <section class="section section--contact" id="contact" data-chapter="CHAPTER SIX">
+      <div class="contact-content">
+        <span class="chapter-label">CONTACT ME</span>
+        <h2 class="section-title-xl contact-title">let's start<br>something</h2>
+        <p class="contact-subtitle">I'm open to collaborations on products, film, or anything that looks interesting. If you think we should work together, reach out!</p>
+        <div class="contact-icons">
+          <a href="mailto:sudheepsivakumar2006@gmail.com" class="contact-icon-link" aria-label="Email">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </a>
+          <a href="https://github.com/imsudheep" target="_blank" class="contact-icon-link" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/sudheepsivakumar/" target="_blank" class="contact-icon-link" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="Sudheep_VS_Resume.pdf.pdf" download class="contact-icon-link" aria-label="Resume">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10 9 9 9 8 9"/>
+            </svg>
+          </a>
+        </div>
+        <div class="contact-footer">
+          COPYRIGHT CLIMED SUDHEEP SIVAKUMAR.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js?v=2"></script>
+</body>
+
+</html>
