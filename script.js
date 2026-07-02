@@ -100,8 +100,13 @@
 
     const vh = window.visualViewport?.height ?? window.innerHeight;
     const maxScroll = Math.max(0, journeyContent.scrollWidth - vh);
-    journeySection.style.height = (vh + maxScroll) + 'px';
-    return maxScroll;
+    
+    // Scale scroll height on mobile to make it feel snappier and reduce scrolling distance
+    const isMobile = window.innerWidth <= 768;
+    const multiplier = isMobile ? 0.45 : 1.0;
+
+    journeySection.style.height = (vh + maxScroll * multiplier) + 'px';
+    return maxScroll * multiplier;
   }
 
   function updateJourneyScroll() {
