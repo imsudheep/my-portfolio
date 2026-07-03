@@ -173,23 +173,9 @@
       statusColor: "var(--mac-green)",
       link: "https://github.com",
       files: [
-        { name: "src", type: "folder", items: 25, updatedDate: "2 days ago" },
-        { name: "public", type: "folder", items: 12, updatedDate: "5 days ago" },
-        { name: "components", type: "folder", items: 18, updatedDate: "2 days ago" },
-        { name: "assets", type: "folder", items: 32, updatedDate: "3 days ago" },
-        { name: ".gitignore", type: "file", kind: "Text Document", size: "1 KB", updatedDate: "1 week ago", iconClass: "file-text", preview: "node_modules/\n.env\ndist/\n.DS_Store\n*.log" },
-        { name: "App.jsx", type: "file", kind: "JavaScript JSX", size: "3 KB", updatedDate: "2 days ago", iconClass: "file-react", preview: "import React from 'react';\nimport { View, Text } from 'react-native';\nimport DilemmaFeed from './src/DilemmaFeed';\n\nexport default function App() {\n  return (\n    <View style={{ flex: 1, backgroundColor: '#032130' }}>\n      <DilemmaFeed />\n    </View>\n  );\n}" },
-        { name: "main.jsx", type: "file", kind: "JavaScript JSX", size: "1.2 KB", updatedDate: "3 days ago", iconClass: "file-react", preview: "import React from 'react';\nimport ReactDOM from 'react-dom/client';\nimport App from './App.jsx';\nimport './styles.css';\n\nReactDOM.createRoot(document.getElementById('root')).render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>\n);" },
-        { name: "styles.css", type: "file", kind: "CSS", size: "8 KB", updatedDate: "2 days ago", iconClass: "file-css", preview: "body {\n  margin: 0;\n  font-family: -apple-system, sans-serif;\n  background-color: #032130;\n  color: #ffffff;\n}\n\n.card {\n  border-radius: 12px;\n  padding: 16px;\n}" },
-        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "2 days ago", iconClass: "file-chrome", isWebLink: true, link: "https://dilemaa.app", preview: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Dilemaa - Social Q&A</title>\n</head>\n<body>\n  <div id=\"root\"></div>\n</body>\n</html>" },
-        { name: "README.md (about the project)", type: "file", kind: "Text Document", size: "16 KB", updatedDate: "2 days ago", iconClass: "file-text", preview: "# Dilemaa\n\nA Q&A social platform where people share real life dilemmas and get advice from the community.\n\n## Overview\nDilemaa is a modern social platform built for authentic conversations. Users post real-life dilemmas anonymously and receive thoughtful advice through voting and comments.\n\n## Tech Stack\n- React Native (Mobile & Web)\n- Node.js + Express (Backend API)\n- Supabase (Database & Auth)\n- Azure (Cloud Infrastructure)\n- ML API (Content Moderation)\n\n## Features\n- Anonymous dilemma posting with category tags\n- Upvote/downvote system for community-driven advice\n- Real-time comment threads with reply nesting\n- Personalized dashboard tracking your dilemmas\n- ML-powered content moderation for safe conversations\n- Push notifications for replies and milestones\n- Dark mode UI with smooth animations\n\n## Architecture\nThe app follows a monorepo structure with shared TypeScript types between frontend and backend. The React Native app uses Expo for cross-platform deployment, while the backend runs on Azure Functions for serverless scalability.\n\n## Challenges Solved\n- Implemented real-time updates using WebSockets\n- Built a custom moderation ML pipeline using TensorFlow.js\n- Optimized database queries reducing load times by 60%\n- Designed anonymous identity system with optional verification\n\n## Future Roadmap\n- AI-powered dilemma suggestions\n- Community rewards and badges\n- Mobile push notification system\n- Multi-language support\n- Premium subscription tier\n\n## Status: Complete\nDeployed and actively used by the community." },
-        { name: "UI Screens", type: "folder", items: 4, updatedDate: "2 days ago", children: [
-          { name: "feed.png", type: "file", kind: "PNG Image", size: "1.2 MB", updatedDate: "2 days ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/dilemaa-launch.jpg" },
-          { name: "post-detail.png", type: "file", kind: "PNG Image", size: "0.9 MB", updatedDate: "2 days ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/dilemaa.png" },
-          { name: "profile.png", type: "file", kind: "PNG Image", size: "1.1 MB", updatedDate: "2 days ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/dilemaa-launch.jpg" },
-          { name: "onboarding.png", type: "file", kind: "PNG Image", size: "0.8 MB", updatedDate: "2 days ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/dilemaa.png" }
-        ] },
-        { name: "GitHub", type: "file", kind: "Internet Shortcut", size: "1 KB", updatedDate: "2 days ago", iconClass: "file-github", isGitLink: true, link: "https://github.com/imsudheep/dilemaa", preview: "Dilemaa GitHub Repository\n\nDouble-click to open in browser." }
+        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "2 days ago", iconClass: "file-chrome", isWebLink: true, link: "https://dilemaa.app" },
+        { name: "about.md", type: "file", kind: "Markdown", size: "4 KB", updatedDate: "2 days ago", iconClass: "file-text", preview: "# Dilemma\n\n## Project Overview\nA Q&A social platform where people share real life dilemmas and get advice from the community.\n\n## Why I Built It\nI noticed people often hesitate to share personal dilemmas publicly. I wanted a safe, anonymous space where anyone could seek advice without judgment.\n\n## Features\n- Anonymous dilemma posting with category tags\n- Upvote/downvote system for community-driven advice\n- Real-time comment threads with reply nesting\n- Personalized dashboard tracking your dilemmas\n- ML-powered content moderation for safe conversations\n- Push notifications for replies and milestones\n- Dark mode UI with smooth animations\n\n## Tech Stack\nReact Native, Node.js, Supabase, Azure, ML API\n\n## Challenges\n- Implementing real-time updates using WebSockets\n- Building a custom moderation ML pipeline using TensorFlow.js\n- Optimizing database queries reducing load times by 60%\n- Designing anonymous identity system with optional verification\n\n## What I Learned\nThis project taught me how to build scalable real-time systems, integrate machine learning for content moderation, and design privacy-first social features." },
+        { name: "preview.png", type: "file", kind: "PNG Image", size: "1.2 MB", updatedDate: "2 days ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/dilemaa.png" }
       ]
     },
     nostalgia: {
@@ -207,18 +193,9 @@
       statusColor: "var(--mac-green)",
       link: "https://github.com",
       files: [
-        { name: "src", type: "folder", items: 15, updatedDate: "1 week ago" },
-        { name: "components", type: "folder", items: 8, updatedDate: "1 week ago" },
-        { name: "package.json", type: "file", kind: "JSON", size: "1.2 KB", updatedDate: "1 week ago", iconClass: "file-json", preview: "{\n  \"name\": \"nostalgia\",\n  \"dependencies\": {\n    \"@google/generative-ai\": \"^0.1.0\",\n    \"supabase-js\": \"^2.0.0\"\n  }\n}" },
-        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "1 week ago", iconClass: "file-chrome", isWebLink: true, link: "https://nostalgia-journal.app", preview: "<!DOCTYPE html>\n<html>\n<head><title>Nostalgia - AI Journal</title></head>\n<body>\n  <div id=\"root\"></div>\n</body>\n</html>" },
-        { name: "README.md (about the project)", type: "file", kind: "Text Document", size: "14 KB", updatedDate: "1 week ago", iconClass: "file-text", preview: "# Nostalgia\n\nAn AI-powered conversational journal designed to reduce burnout. Talk naturally and let Nostalgia turn your conversations into structured journals you can revisit.\n\n## Overview\nNostalgia reimagines journaling by making it conversational. Instead of typing out entries, users speak naturally like they would to a friend, and AI structures the conversation into meaningful journal entries.\n\n## Tech Stack\n- React Native (Cross-platform mobile)\n- Supabase (Database & Authentication)\n- Google Generative AI (Conversation Processing)\n- Custom NLP Pipeline\n\n## Features\n- Natural conversation-based journaling\n- AI-powered sentiment analysis and mood tracking\n- Auto-generated weekly reflection summaries\n- Secure cloud sync across devices\n- Privacy-first design with end-to-end encryption\n- Beautiful, calming UI with nature-inspired themes\n- Search and filter past entries by mood, date, or topic\n\n## Architecture\nThe app uses a hybrid architecture where AI processing happens server-side via Google's Gemini API, while the client handles real-time conversation flow. Entries are encrypted client-side before being stored in Supabase.\n\n## Challenges Solved\n- Designed conversation flow that feels natural, not interrogative\n- Implemented client-side encryption for privacy\n- Built AI prompt engineering for accurate journal structuring\n- Optimized for low-latency conversation processing\n\n## Future Roadmap\n- Voice-based journaling with speech-to-text\n- AI companion mode with proactive check-ins\n- Shared journals for therapy/counseling\n- Integration with Apple Health for wellness insights\n\n## Status: Complete\nAvailable on iOS and Android." },
-        { name: "UI Screens", type: "folder", items: 4, updatedDate: "1 week ago", children: [
-          { name: "chat-view.png", type: "file", kind: "PNG Image", size: "1.1 MB", updatedDate: "1 week ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/nostalgia_app.png" },
-          { name: "journal-entry.png", type: "file", kind: "PNG Image", size: "0.9 MB", updatedDate: "1 week ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/nostalgia.png" },
-          { name: "mood-tracker.png", type: "file", kind: "PNG Image", size: "1.0 MB", updatedDate: "1 week ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/nostalgia_app.png" },
-          { name: "settings.png", type: "file", kind: "PNG Image", size: "0.7 MB", updatedDate: "1 week ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/nostalgia.png" }
-        ] },
-        { name: "GitHub", type: "file", kind: "Internet Shortcut", size: "1 KB", updatedDate: "1 week ago", iconClass: "file-github", isGitLink: true, link: "https://github.com/imsudheep/nostalgia", preview: "Nostalgia GitHub Repository\n\nDouble-click to open in browser." }
+        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "1 week ago", iconClass: "file-chrome", isWebLink: true, link: "https://nostalgia-journal.app" },
+        { name: "about.md", type: "file", kind: "Markdown", size: "4 KB", updatedDate: "1 week ago", iconClass: "file-text", preview: "# Nostalgia\n\n## Project Overview\nAn AI-powered conversational journal designed to reduce burnout. Talk naturally and let Nostalgia turn your conversations into structured journals you can revisit.\n\n## Why I Built It\nTraditional journaling feels like a chore. I wanted to make it as natural as talking to a friend while preserving the therapeutic benefits of reflective writing.\n\n## Features\n- Natural conversation-based journaling\n- AI-powered sentiment analysis and mood tracking\n- Auto-generated weekly reflection summaries\n- Secure cloud sync across devices\n- Privacy-first design with end-to-end encryption\n- Search and filter past entries by mood, date, or topic\n\n## Tech Stack\nReact Native, Supabase, Google Generative AI, Custom NLP Pipeline\n\n## Challenges\n- Designing conversation flow that feels natural, not interrogative\n- Implementing client-side encryption for privacy\n- AI prompt engineering for accurate journal structuring\n- Optimizing for low-latency conversation processing\n\n## What I Learned\nI learned how to design conversational AI interfaces that feel human, implement client-side encryption, and build prompt engineering systems for accurate content structuring." },
+        { name: "preview.png", type: "file", kind: "PNG Image", size: "1.1 MB", updatedDate: "1 week ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/nostalgia_app.png" }
       ]
     },
     sae: {
@@ -236,19 +213,9 @@
       statusColor: "var(--mac-green)",
       link: "https://github.com",
       files: [
-        { name: "assets", type: "folder", items: 40, updatedDate: "3 days ago" },
-        { name: "lessons.json", type: "file", kind: "JSON", size: "12 KB", updatedDate: "3 days ago", iconClass: "file-json", preview: "{\n  \"lessons\": [\n    { \"id\": 1, \"title\": \"Hangul Vowels\", \"magpieIntro\": \"Hello! Let's study...\" }\n  ]\n}" },
-        { name: "App.tsx", type: "file", kind: "TypeScript TSX", size: "4 KB", updatedDate: "3 days ago", iconClass: "file-typescript", preview: "import React from 'react';\nimport LessonNavigator from './src/LessonNavigator';\n\nexport default function App() {\n  return <LessonNavigator />;\n}" },
-        { name: "package.json", type: "file", kind: "JSON", size: "1.5 KB", updatedDate: "3 days ago", iconClass: "file-json", preview: "{\n  \"name\": \"sae-hangul\"\n}" },
-        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "3 days ago", iconClass: "file-chrome", isWebLink: true, link: "https://sae-hangul.app", preview: "<!DOCTYPE html>\n<html>\n<head><title>Sae - Learn Hangul</title></head>\n<body>\n  <div id=\"root\"></div>\n</body>\n</html>" },
-        { name: "README.md (about the project)", type: "file", kind: "Text Document", size: "15 KB", updatedDate: "3 days ago", iconClass: "file-text", preview: "# Sae\n\nA Korean-learning app that feels like a game — S-curve progress paths, a magpie mascot, and focused Hangul drills.\n\n## Overview\nSae (named after the Korean word for 'bird') makes learning Hangul fun and addictive. Progress through beautifully designed S-curve paths, unlock achievements with your magpie companion, and master Korean characters through spaced repetition.\n\n## Tech Stack\n- React Native (Mobile)\n- Custom Lesson Engine (JavaScript)\n- JSON Scene System\n- React Native Animations\n\n## Features\n- S-curve visual progress system for motivational learning\n- Magpie mascot that celebrates milestones\n- Bite-sized Hangul drills with instant feedback\n- Spaced repetition for long-term retention\n- Stroke order animations for every character\n- Pronunciation guide with audio examples\n- Achievement badges and learning streaks\n- Customizable daily goal reminders\n\n## Architecture\nThe lesson engine is built as a configurable JSON-driven system. Each lesson is defined as a scene with interactive elements, making it easy to add new content without code changes.\n\n## Challenges Solved\n- Built a flexible scene-based lesson engine from scratch\n- Designed intuitive stroke order animations\n- Implemented spaced repetition algorithm\n- Optimized for offline-first usage\n\n## Future Roadmap\n- Vocabulary and phrase lessons\n- Grammar guides and exercises\n- K-pop lyric breakdowns\n- Community challenges and leaderboards\n- Korean culture mini-lessons\n\n## Status: Complete\nAvailable on iOS and Android with 10+ lessons covering all Hangul characters." },
-        { name: "UI Screens", type: "folder", items: 4, updatedDate: "3 days ago", children: [
-          { name: "lesson-view.png", type: "file", kind: "PNG Image", size: "1.3 MB", updatedDate: "3 days ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/sae.png" },
-          { name: "progress-map.png", type: "file", kind: "PNG Image", size: "1.0 MB", updatedDate: "3 days ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/sae.png" },
-          { name: "character-drill.png", type: "file", kind: "PNG Image", size: "1.1 MB", updatedDate: "3 days ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/sae.png" },
-          { name: "achievements.png", type: "file", kind: "PNG Image", size: "0.9 MB", updatedDate: "3 days ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/sae.png" }
-        ] },
-        { name: "GitHub", type: "file", kind: "Internet Shortcut", size: "1 KB", updatedDate: "3 days ago", iconClass: "file-github", isGitLink: true, link: "https://github.com/imsudheep/sae-hangul", preview: "Sae GitHub Repository\n\nDouble-click to open in browser." }
+        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "3 days ago", iconClass: "file-chrome", isWebLink: true, link: "https://sae-hangul.app" },
+        { name: "about.md", type: "file", kind: "Markdown", size: "4 KB", updatedDate: "3 days ago", iconClass: "file-text", preview: "# Sae\n\n## Project Overview\nA Korean-learning app that feels like a game — S-curve progress paths, a magpie mascot, and focused Hangul drills.\n\n## Why I Built It\nI wanted to learn Korean but found existing apps boring. I built Sae to make language learning feel like an adventure game.\n\n## Features\n- S-curve visual progress system for motivational learning\n- Magpie mascot that celebrates milestones\n- Bite-sized Hangul drills with instant feedback\n- Spaced repetition for long-term retention\n- Stroke order animations for every character\n- Pronunciation guide with audio examples\n- Achievement badges and learning streaks\n\n## Tech Stack\nReact Native, Custom Lesson Engine, JSON Scene System\n\n## Challenges\n- Building a flexible scene-based lesson engine from scratch\n- Designing intuitive stroke order animations\n- Implementing spaced repetition algorithm\n- Optimizing for offline-first usage\n\n## What I Learned\nI learned how to build a configurable game-like lesson engine, implement effective spaced repetition, and create engaging educational animations." },
+        { name: "preview.png", type: "file", kind: "PNG Image", size: "1.3 MB", updatedDate: "3 days ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/sae.png" }
       ]
     },
     portfolio: {
@@ -266,20 +233,9 @@
       statusColor: "var(--mac-green)",
       link: "https://github.com",
       files: [
-        { name: "Doc icons", type: "folder", items: 8, updatedDate: "Today" },
-        { name: "Journey photos", type: "folder", items: 10, updatedDate: "Yesterday" },
-        { name: "styles.css", type: "file", kind: "CSS", size: "30 KB", updatedDate: "Today", iconClass: "file-css", preview: ":root {\n  --text-primary: #1d1d1f;\n  --background: #ffffff;\n}" },
-        { name: "script.js", type: "file", kind: "JavaScript", size: "13.7 KB", updatedDate: "Today", iconClass: "file-js", preview: "(function() {\n  'use strict';\n  // Navigation physics, macOS Dock magnification...\n})();" },
-        { name: "package.json", type: "file", kind: "JSON", size: "0.2 KB", updatedDate: "Today", iconClass: "file-json", preview: "{\n  \"name\": \"portfolio-website\",\n  \"scripts\": { \"dev\": \"npx serve\" }\n}" },
-        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "Today", iconClass: "file-chrome", isWebLink: true, link: "https://imsudheep.github.io", preview: "<!DOCTYPE html>\n<html>\n  <head><title>Sudheep Here</title></head>\n  <body>\n    <!-- Portfolio content -->\n  </body>\n</html>" },
-        { name: "README.md (about the project)", type: "file", kind: "Text Document", size: "18 KB", updatedDate: "Today", iconClass: "file-text", preview: "# Personal Portfolio\n\nA pixel-perfect, premium personal portfolio website showcasing projects, skills, and life milestones.\n\n## Overview\nThis portfolio is designed as an interactive macOS-inspired experience, featuring a fully functional Finder replica for project browsing and a macOS Dock for skills display. Every detail is crafted to feel like using a real Mac.\n\n## Tech Stack\n- HTML5 (Semantic markup)\n- CSS3 (Custom properties, animations, responsive design)\n- JavaScript (Vanilla, no frameworks)\n- Scroll-based animations\n- Elza Font Family\n\n## Features\n- macOS Finder replica with full file browsing\n- macOS Dock with magnification physics\n- Interactive hero section with mouse-follow animation\n- Horizontal timeline with parallax scrolling\n- Responsive design (mobile to desktop)\n- iOS Files-style mobile adaptation\n- Smooth chapter-based navigation\n- Custom scrollbar styling\n\n## Architecture\nSingle-page application (SPA) architecture. All content is loaded from a single HTML file with CSS and JS enhancements. The Finder app is built entirely with vanilla JavaScript using a virtual data structure for file navigation.\n\n## Challenges Solved\n- Implemented a fully functional file browser from scratch\n- Built realistic macOS Dock physics with spring animations\n- Created responsive design that works across all devices\n- Optimized animations for 60fps performance\n\n## Future Roadmap\n- Add dark mode support\n- Implement project filtering in Finder\n- Add more interactive macOS elements\n- Performance optimizations\n\n## Status: Complete\nLive and actively maintained." },
-        { name: "UI Screens", type: "folder", items: 4, updatedDate: "Today", children: [
-          { name: "hero-section.png", type: "file", kind: "PNG Image", size: "1.5 MB", updatedDate: "Today", iconClass: "file-img", isImage: true, imageSrc: "public/media/ben.png" },
-          { name: "projects-finder.png", type: "file", kind: "PNG Image", size: "1.3 MB", updatedDate: "Today", iconClass: "file-img", isImage: true, imageSrc: "public/media/ben.png" },
-          { name: "skills-dock.png", type: "file", kind: "PNG Image", size: "1.1 MB", updatedDate: "Today", iconClass: "file-img", isImage: true, imageSrc: "public/media/ben.png" },
-          { name: "mobile-view.png", type: "file", kind: "PNG Image", size: "0.9 MB", updatedDate: "Today", iconClass: "file-img", isImage: true, imageSrc: "public/media/ben.png" }
-        ] },
-        { name: "GitHub", type: "file", kind: "Internet Shortcut", size: "1 KB", updatedDate: "Today", iconClass: "file-github", isGitLink: true, link: "https://github.com/imsudheep/portfolio", preview: "Portfolio GitHub Repository\n\nDouble-click to open in browser." }
+        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "Today", iconClass: "file-chrome", isWebLink: true, link: "https://imsudheep.github.io" },
+        { name: "about.md", type: "file", kind: "Markdown", size: "4 KB", updatedDate: "Today", iconClass: "file-text", preview: "# Personal Portfolio\n\n## Project Overview\nA pixel-perfect, premium personal portfolio website showcasing projects, skills, and life milestones.\n\n## Why I Built It\nI wanted to create a portfolio that stands out — not just a grid of cards, but an interactive experience that reflects my personality and skills.\n\n## Features\n- macOS Finder replica with full file browsing\n- macOS Dock with magnification physics\n- Interactive hero section with mouse-follow animation\n- Horizontal timeline with parallax scrolling\n- Responsive design (mobile to desktop)\n- iOS Files-style mobile adaptation\n- Smooth chapter-based navigation\n- Custom scrollbar styling\n\n## Tech Stack\nHTML, CSS, JavaScript, Scroll animations, Elza Font Family\n\n## Challenges\n- Implementing a fully functional file browser from scratch\n- Building realistic macOS Dock physics with spring animations\n- Creating responsive design that works across all devices\n- Optimizing animations for 60fps performance\n\n## What I Learned\nThis project taught me advanced CSS animations, vanilla JavaScript architecture, responsive design patterns, and how to create immersive web experiences." },
+        { name: "preview.png", type: "file", kind: "PNG Image", size: "1.5 MB", updatedDate: "Today", iconClass: "file-img", isImage: true, imageSrc: "public/media/ben.png" }
       ]
     },
     habit: {
@@ -297,17 +253,9 @@
       statusColor: "var(--mac-blue)",
       link: "https://github.com",
       files: [
-        { name: "src", type: "folder", items: 10, updatedDate: "4 days ago" },
-        { name: "package.json", type: "file", kind: "JSON", size: "1.0 KB", updatedDate: "4 days ago", iconClass: "file-json", preview: "{\n  \"name\": \"habit-tracker\"\n}" },
-        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "4 days ago", iconClass: "file-chrome", isWebLink: true, link: "https://habit-tracker.app", preview: "<!DOCTYPE html>\n<html>\n<head><title>Habit Tracker</title></head>\n<body>\n  <div id=\"app\"></div>\n</body>\n</html>" },
-        { name: "README.md (about the project)", type: "file", kind: "Text Document", size: "13 KB", updatedDate: "4 days ago", iconClass: "file-text", preview: "# Habit Tracker\n\nA beautiful habit tracker with streak building, rich charts, and gamified reward systems to keep you motivated every day.\n\n## Overview\nThis app transforms habit tracking from a chore into a rewarding experience. Build streaks, earn achievements, and watch your progress with beautiful visualizations.\n\n## Tech Stack\n- React 18\n- CSS Variables for theming\n- Chart.js for data visualization\n- LocalStorage for offline persistence\n\n## Features\n- Custom habit creation with flexible scheduling\n- Visual streak calendar with daily check-ins\n- Interactive charts showing progress over time\n- Gamified rewards system with achievements\n- Dark/light theme support\n- Weekly and monthly progress reports\n- Reminder notifications\n- Data export functionality\n\n## Architecture\nFully client-side React application using LocalStorage for persistence. No backend required, making it fast and privacy-focused. State management uses React Context.\n\n## Challenges Solved\n- Built a flexible habit scheduling system\n- Implemented streak calculation algorithm\n- Created responsive charts that work on mobile\n- Designed gamification that actually motivates\n\n## Future Roadmap\n- Cloud sync across devices\n- Social challenges with friends\n- API integrations with fitness apps\n- AI-powered habit suggestions\n\n## Status: In Progress\nCore features complete, cloud sync in development." },
-        { name: "UI Screens", type: "folder", items: 4, updatedDate: "4 days ago", children: [
-          { name: "dashboard.png", type: "file", kind: "PNG Image", size: "1.2 MB", updatedDate: "4 days ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/fitness.png" },
-          { name: "new-habit.png", type: "file", kind: "PNG Image", size: "0.9 MB", updatedDate: "4 days ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/fitness.png" },
-          { name: "statistics.png", type: "file", kind: "PNG Image", size: "1.1 MB", updatedDate: "4 days ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/fitness.png" },
-          { name: "achievements.png", type: "file", kind: "PNG Image", size: "0.8 MB", updatedDate: "4 days ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/fitness.png" }
-        ] },
-        { name: "GitHub", type: "file", kind: "Internet Shortcut", size: "1 KB", updatedDate: "4 days ago", iconClass: "file-github", isGitLink: true, link: "https://github.com/imsudheep/habit-tracker", preview: "Habit Tracker GitHub Repository\n\nDouble-click to open in browser." }
+        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "4 days ago", iconClass: "file-chrome", isWebLink: true, link: "https://habit-tracker.app" },
+        { name: "about.md", type: "file", kind: "Markdown", size: "4 KB", updatedDate: "4 days ago", iconClass: "file-text", preview: "# Habit Tracker\n\n## Project Overview\nA beautiful habit tracker with streak building, rich charts, and gamified reward systems to keep you motivated every day.\n\n## Why I Built It\nI struggled with maintaining habits and found existing trackers either too complex or too boring. I built something that makes habit tracking actually fun.\n\n## Features\n- Custom habit creation with flexible scheduling\n- Visual streak calendar with daily check-ins\n- Interactive charts showing progress over time\n- Gamified rewards system with achievements\n- Dark/light theme support\n- Weekly and monthly progress reports\n- Reminder notifications\n- Data export functionality\n\n## Tech Stack\nReact, CSS Variables, Chart.js, LocalStorage\n\n## Challenges\n- Building a flexible habit scheduling system\n- Implementing streak calculation algorithm\n- Creating responsive charts that work on mobile\n- Designing gamification that actually motivates\n\n## What I Learned\nI learned React state management with Context API, data visualization with Chart.js, and how to design gamification systems that drive real behavior change." },
+        { name: "preview.png", type: "file", kind: "PNG Image", size: "1.2 MB", updatedDate: "4 days ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/fitness.png" }
       ]
     },
     skacas: {
@@ -325,18 +273,9 @@
       statusColor: "var(--mac-green)",
       link: "https://figma.com",
       files: [
-        { name: "wireframes", type: "folder", items: 12, updatedDate: "1 week ago" },
-        { name: "mockups", type: "folder", items: 8, updatedDate: "1 week ago" },
-        { name: "presentation.pdf", type: "file", kind: "PDF Document", size: "14 MB", updatedDate: "1 week ago", iconClass: "file-pdf" },
-        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "1 week ago", iconClass: "file-chrome", isWebLink: true, link: "https://skacas-redesign.figma.com", preview: "<!DOCTYPE html>\n<html>\n<head><title>SKACAS Redesign</title></head>\n<body>\n  <p>SKACAS College Website Redesign - Figma Prototype</p>\n</body>\n</html>" },
-        { name: "README.md (about the project)", type: "file", kind: "Text Document", size: "12 KB", updatedDate: "1 week ago", iconClass: "file-text", preview: "# SKACAS Redesign\n\nRedesigning the Sri Krishna Adithya College of Arts and Science website UI to be modern, accessible, and user-friendly.\n\n## Overview\nA complete UI/UX redesign project for SKACAS college website, focusing on improving navigation, visual appeal, and information architecture while maintaining institutional identity.\n\n## Tech Stack\n- Figma (Design & Prototyping)\n- UI Design Principles\n- Information Architecture\n- Accessibility Standards\n\n## Design System\n- Modern typography hierarchy\n- Accessible color palette (WCAG AA compliant)\n- Consistent component library\n- Responsive grid system\n- Micro-interactions and animations\n- Iconography system\n\n## Screens Designed\n- Homepage with hero and featured sections\n- About us with timeline\n- Academic programs catalog\n- Admissions portal\n- Student life gallery\n- Contact and location\n- Faculty directory\n- News and events\n\n## Challenges Solved\n- Simplified complex navigation into intuitive flows\n- Created a scalable design system\n- Ensured accessibility for diverse users\n- Balanced modern design with institutional branding\n\n## Future Roadmap\n- Interactive prototype with user testing\n- Design handoff documentation\n- Component development guidelines\n- Admin dashboard design\n\n## Status: Complete\nDesign system and all screens delivered." },
-        { name: "UI Screens", type: "folder", items: 4, updatedDate: "1 week ago", children: [
-          { name: "homepage.png", type: "file", kind: "PNG Image", size: "1.4 MB", updatedDate: "1 week ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/business.png" },
-          { name: "academics.png", type: "file", kind: "PNG Image", size: "1.1 MB", updatedDate: "1 week ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/business.png" },
-          { name: "admissions.png", type: "file", kind: "PNG Image", size: "1.0 MB", updatedDate: "1 week ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/business.png" },
-          { name: "student-life.png", type: "file", kind: "PNG Image", size: "1.2 MB", updatedDate: "1 week ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/business.png" }
-        ] },
-        { name: "GitHub", type: "file", kind: "Internet Shortcut", size: "1 KB", updatedDate: "1 week ago", iconClass: "file-github", isGitLink: true, link: "https://github.com/imsudheep/skacas-redesign", preview: "SKACAS Redesign GitHub Repository\n\nDouble-click to open in browser." }
+        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "1 week ago", iconClass: "file-chrome", isWebLink: true, link: "https://skacas-redesign.figma.com" },
+        { name: "about.md", type: "file", kind: "Markdown", size: "4 KB", updatedDate: "1 week ago", iconClass: "file-text", preview: "# SKACAS Redesign\n\n## Project Overview\nRedesigning the Sri Krishna Adithya College of Arts and Science website UI to be modern, accessible, and user-friendly.\n\n## Why I Built It\nThe college website was outdated and hard to navigate. I wanted to give it a modern makeover while keeping the institutional identity intact.\n\n## Features\n- Modern typography hierarchy\n- Accessible color palette (WCAG AA compliant)\n- Consistent component library\n- Responsive grid system\n- Micro-interactions and animations\n- Screens: Homepage, About, Academics, Admissions, Student Life, Contact, Faculty, News\n\n## Tech Stack\nFigma, UI Design, Information Architecture\n\n## Challenges\n- Simplifying complex navigation into intuitive flows\n- Creating a scalable design system\n- Ensuring accessibility for diverse users\n- Balancing modern design with institutional branding\n\n## What I Learned\nThis project deepened my understanding of design systems, information architecture, accessibility standards, and how to balance modern aesthetics with institutional requirements." },
+        { name: "preview.png", type: "file", kind: "PNG Image", size: "1.4 MB", updatedDate: "1 week ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/business.png" }
       ]
     },
     photo: {
@@ -354,17 +293,9 @@
       statusColor: "var(--mac-green)",
       link: "https://github.com",
       files: [
-        { name: "components", type: "folder", items: 14, updatedDate: "2 weeks ago" },
-        { name: "pages", type: "folder", items: 6, updatedDate: "2 weeks ago" },
-        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "2 weeks ago", iconClass: "file-chrome", isWebLink: true, link: "https://photo-studio.app", preview: "<!DOCTYPE html>\n<html>\n<head><title>Photo Studio</title></head>\n<body>\n  <div id=\"app\"></div>\n</body>\n</html>" },
-        { name: "README.md (about the project)", type: "file", kind: "Text Document", size: "11 KB", updatedDate: "2 weeks ago", iconClass: "file-text", preview: "# Photo Studio\n\nA portfolio platform for photographers to showcase, organize, and license their work professionally.\n\n## Overview\nPhoto Studio provides photographers with a beautiful, customizable portfolio website with integrated licensing, client galleries, and print store functionality.\n\n## Tech Stack\n- Next.js (React Framework)\n- Tailwind CSS (Styling)\n- Sanity CMS (Content Management)\n- Cloudinary (Image Optimization & CDN)\n- Stripe (Payment Processing)\n\n## Features\n- Customizable portfolio templates\n- High-resolution image galleries with lightbox\n- Client proofing galleries with password protection\n- Integrated print store with fulfillment\n- Image licensing and watermarking\n- SEO optimization for photographers\n- Blog with markdown support\n- Contact form with file upload\n\n## Architecture\nNext.js for server-side rendering and optimal SEO. Sanity CMS as headless backend for easy content management. Images are served through Cloudinary for automatic optimization and CDN delivery.\n\n## Challenges Solved\n- Implemented responsive image grids that work at any scale\n- Built client proofing system with feedback collection\n- Integrated Stripe for seamless print purchases\n- Optimized image loading with lazy loading and blur placeholders\n\n## Future Roadmap\n- AI-powered image organization and tagging\n- Social media integration for auto-posting\n- Mobile app companion\n- Client invoice and contract management\n\n## Status: Complete\nDeployed and used by professional photographers." },
-        { name: "UI Screens", type: "folder", items: 4, updatedDate: "2 weeks ago", children: [
-          { name: "portfolio-view.png", type: "file", kind: "PNG Image", size: "1.3 MB", updatedDate: "2 weeks ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/travel.png" },
-          { name: "gallery-view.png", type: "file", kind: "PNG Image", size: "1.1 MB", updatedDate: "2 weeks ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/travel.png" },
-          { name: "client-proofing.png", type: "file", kind: "PNG Image", size: "1.0 MB", updatedDate: "2 weeks ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/travel.png" },
-          { name: "print-store.png", type: "file", kind: "PNG Image", size: "0.9 MB", updatedDate: "2 weeks ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/travel.png" }
-        ] },
-        { name: "GitHub", type: "file", kind: "Internet Shortcut", size: "1 KB", updatedDate: "2 weeks ago", iconClass: "file-github", isGitLink: true, link: "https://github.com/imsudheep/photo-studio", preview: "Photo Studio GitHub Repository\n\nDouble-click to open in browser." }
+        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "2 weeks ago", iconClass: "file-chrome", isWebLink: true, link: "https://photo-studio.app" },
+        { name: "about.md", type: "file", kind: "Markdown", size: "4 KB", updatedDate: "2 weeks ago", iconClass: "file-text", preview: "# Photo Studio\n\n## Project Overview\nA portfolio platform for photographers to showcase, organize, and license their work professionally.\n\n## Why I Built It\nPhotographers deserve a beautiful, professional portfolio site that handles everything from showcasing to licensing and print sales.\n\n## Features\n- Customizable portfolio templates\n- High-resolution image galleries with lightbox\n- Client proofing galleries with password protection\n- Integrated print store with fulfillment\n- Image licensing and watermarking\n- SEO optimization for photographers\n- Blog with markdown support\n- Contact form with file upload\n\n## Tech Stack\nNext.js, Tailwind CSS, Sanity CMS, Cloudinary, Stripe\n\n## Challenges\n- Implementing responsive image grids that work at any scale\n- Building client proofing system with feedback collection\n- Integrating Stripe for seamless print purchases\n- Optimizing image loading with lazy loading and blur placeholders\n\n## What I Learned\nI learned Next.js server-side rendering, headless CMS architecture, Stripe payment integration, and advanced image optimization techniques." },
+        { name: "preview.png", type: "file", kind: "PNG Image", size: "1.3 MB", updatedDate: "2 weeks ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/travel.png" }
       ]
     },
     learning: {
@@ -382,17 +313,9 @@
       statusColor: "var(--mac-green)",
       link: "https://github.com",
       files: [
-        { name: "server", type: "folder", items: 20, updatedDate: "3 weeks ago" },
-        { name: "client", type: "folder", items: 30, updatedDate: "3 weeks ago" },
-        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "3 weeks ago", iconClass: "file-chrome", isWebLink: true, link: "https://learning-hub.app", preview: "<!DOCTYPE html>\n<html>\n<head><title>Learning Hub</title></head>\n<body>\n  <div id=\"root\"></div>\n</body>\n</html>" },
-        { name: "README.md (about the project)", type: "file", kind: "Text Document", size: "13 KB", updatedDate: "3 weeks ago", iconClass: "file-text", preview: "# Learning Hub\n\nAn online platform where students can collaborate, share lecture notes, and study together in virtual study rooms.\n\n## Overview\nLearning Hub transforms solo studying into a collaborative experience. Students can create study groups, share resources, host virtual study sessions, and track their academic progress together.\n\n## Tech Stack\n- React 18 (Frontend)\n- GraphQL (API Layer)\n- Express.js (Server)\n- MongoDB (Database)\n- Socket.io (Real-time features)\n- Redis (Caching)\n\n## Features\n- Virtual study rooms with real-time collaboration\n- Shared notes and resource library\n- Interactive whiteboard for group study\n- Pomodoro timer with group synchronization\n- Progress tracking and study analytics\n- Discussion forums for each subject\n- File sharing with preview support\n- Calendar integration for study schedules\n\n## Architecture\nMicroservices architecture with GraphQL as the API gateway. The frontend communicates with backend services through a unified GraphQL endpoint. Real-time features use WebSocket connections through Socket.io.\n\n## Challenges Solved\n- Built real-time collaboration features with low latency\n- Designed scalable GraphQL schema for complex data relationships\n- Implemented efficient file storage and preview generation\n- Created engaging gamification system for study motivation\n\n## Future Roadmap\n- AI study assistant and quiz generator\n- Integration with university LMS systems\n- Mobile app for on-the-go studying\n- Peer tutoring marketplace\n\n## Status: Complete\nDeployed and used by students across multiple universities." },
-        { name: "UI Screens", type: "folder", items: 4, updatedDate: "3 weeks ago", children: [
-          { name: "dashboard.png", type: "file", kind: "PNG Image", size: "1.2 MB", updatedDate: "3 weeks ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/student.png" },
-          { name: "study-room.png", type: "file", kind: "PNG Image", size: "1.0 MB", updatedDate: "3 weeks ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/student.png" },
-          { name: "notes-view.png", type: "file", kind: "PNG Image", size: "1.1 MB", updatedDate: "3 weeks ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/student.png" },
-          { name: "analytics.png", type: "file", kind: "PNG Image", size: "0.9 MB", updatedDate: "3 weeks ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/student.png" }
-        ] },
-        { name: "GitHub", type: "file", kind: "Internet Shortcut", size: "1 KB", updatedDate: "3 weeks ago", iconClass: "file-github", isGitLink: true, link: "https://github.com/imsudheep/learning-hub", preview: "Learning Hub GitHub Repository\n\nDouble-click to open in browser." }
+        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "3 weeks ago", iconClass: "file-chrome", isWebLink: true, link: "https://learning-hub.app" },
+        { name: "about.md", type: "file", kind: "Markdown", size: "4 KB", updatedDate: "3 weeks ago", iconClass: "file-text", preview: "# Learning Hub\n\n## Project Overview\nAn online platform where students can collaborate, share lecture notes, and study together in virtual study rooms.\n\n## Why I Built It\nStudying alone is hard. I wanted to create a space where students could learn together, share resources, and stay motivated as a community.\n\n## Features\n- Virtual study rooms with real-time collaboration\n- Shared notes and resource library\n- Interactive whiteboard for group study\n- Pomodoro timer with group synchronization\n- Progress tracking and study analytics\n- Discussion forums for each subject\n- File sharing with preview support\n- Calendar integration for study schedules\n\n## Tech Stack\nReact, GraphQL, Express, MongoDB, Socket.io, Redis\n\n## Challenges\n- Building real-time collaboration features with low latency\n- Designing scalable GraphQL schema for complex data relationships\n- Implementing efficient file storage and preview generation\n- Creating engaging gamification system for study motivation\n\n## What I Learned\nI learned GraphQL API design, WebSocket real-time communication, microservices architecture, and how to build engaging collaborative learning experiences." },
+        { name: "preview.png", type: "file", kind: "PNG Image", size: "1.2 MB", updatedDate: "3 weeks ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/student.png" }
       ]
     }
   };
@@ -429,79 +352,9 @@
   // Icons SVGs
   const getFolderSvg = (appIconUrl = '') => {
     const rand = Math.floor(Math.random() * 1000000);
-    const backId = `folderBack_${rand}`;
-    const frontId = `folderFront_${rand}`;
-    const highlightId = `folderHighlight_${rand}`;
-    const shadowId = `folderShadow_${rand}`;
     
-    return `<svg viewBox="0 0 48 38" class="folder-icon folder-blue-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="${backId}" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#00a2f3" />
-          <stop offset="100%" stop-color="#055fa3" />
-        </linearGradient>
-        <linearGradient id="${frontId}" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#55c2ff" />
-          <stop offset="100%" stop-color="#0c7ed2" />
-        </linearGradient>
-        <linearGradient id="${highlightId}" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#bfeaff" stop-opacity="0.8"/>
-          <stop offset="100%" stop-color="#55c2ff" stop-opacity="0.2"/>
-        </linearGradient>
-        <filter id="${shadowId}" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#001830" flood-opacity="0.3"/>
-        </filter>
-      </defs>
-      <!-- Back flap with tab -->
-      <path d="M 3 8 
-               C 3 6, 4.5 4.5, 6.5 4.5 
-               L 17 4.5 
-               C 19.5 4.5, 21.5 6, 23 8 
-               L 24.5 10 
-               L 42 10 
-               C 44 10, 45 11.5, 45 13.5 
-               L 45 32 
-               C 45 34, 44 35, 42 35 
-               L 6 35 
-               C 4 35, 3 34, 3 32 
-               Z" fill="url(#${backId})"/>
-      <!-- Inside content (a subtle white/light paper sheet peaking out slightly) -->
-      <path d="M 10 9 
-               L 38 9 
-               C 39.5 9, 40 9.5, 40 11 
-               L 40 18 
-               L 8 18 
-               L 8 11 
-               C 8 9.5, 8.5 9, 10 9 
-               Z" fill="#ffffff" opacity="0.75" />
-      <!-- Front flap -->
-      <path d="M 3 13 
-               C 3 11, 4.5 10.5, 6.5 10.5 
-               L 41.5 10.5 
-               C 43.5 10.5, 45 11, 45 13 
-               L 45 32 
-               C 45 34, 43.5 35, 41.5 35 
-               L 6.5 35 
-               C 4.5 35, 3 34, 3 32 
-               Z" fill="url(#${frontId})" filter="url(#${shadowId})"/>
-      <!-- Top lip highlight on front flap -->
-      <path d="M 3.2 13.5 
-               C 3.2 11.5, 4.7 11, 6.5 11 
-               L 41.5 11 
-               C 43.3 11, 44.8 11.5, 44.8 13.5 
-               L 44.8 15 
-               L 3.2 15 
-               Z" fill="url(#${highlightId})"/>
-      <!-- Embedded App Icon (iOS style / custom front placement) -->
-      ${appIconUrl ? `
-      <g transform="translate(18, 17)">
-        <rect x="0" y="0" width="12" height="12" rx="2.5" fill="#ffffff" filter="url(#${shadowId})"/>
-        <image href="${appIconUrl}" x="0.8" y="0.8" width="10.4" height="10.4" clip-path="url(#appIconClip_${rand})"/>
-        <clipPath id="appIconClip_${rand}">
-          <rect x="0.8" y="0.8" width="10.4" height="10.4" rx="1.8"/>
-        </clipPath>
-      </g>
-      ` : ''}
+    return `<svg viewBox="0 0 100 80" class="folder-icon folder-blue-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <image href="public/media/mac-folder.png" x="0" y="0" width="100" height="80" />
     </svg>`;
   };
 
@@ -1023,105 +876,11 @@
 
     const isMobile = window.innerWidth <= 600;
 
-    // Mobile-specific Root Home Screen: Render Browse locations list
+    // Hide iOS browse menu if it exists (we show folders directly on mobile)
     const mainExplorer = document.getElementById('finderMainContent');
     let browseMenu = mainExplorer.querySelector('.ios-browse-menu');
-    
-    if (isMobile && currentLocation === "root") {
-      filesGrid.style.display = "none";
-      filesListContainer.style.display = "none";
-      
-      if (!browseMenu) {
-        browseMenu = document.createElement('div');
-        browseMenu.className = "ios-browse-menu";
-        mainExplorer.appendChild(browseMenu);
-      }
-      browseMenu.style.display = "flex";
-      
-      browseMenu.innerHTML = `
-        <div class="ios-browse-section">
-          <div class="ios-browse-section-header">Locations</div>
-          <div class="ios-browse-list">
-            <div class="ios-browse-item" data-loc="location-all">
-              <div class="ios-browse-item-left">
-                <span class="ios-browse-icon iphone">📱</span>
-                <span class="ios-browse-label">On My iPhone</span>
-              </div>
-              <span class="ios-browse-chevron">›</span>
-            </div>
-            <div class="ios-browse-item" data-loc="location-web">
-              <div class="ios-browse-item-left">
-                <span class="ios-browse-icon web">💻</span>
-                <span class="ios-browse-label">Web Apps</span>
-              </div>
-              <span class="ios-browse-chevron">›</span>
-            </div>
-            <div class="ios-browse-item" data-loc="location-mobile">
-              <div class="ios-browse-item-left">
-                <span class="ios-browse-icon mobile">📱</span>
-                <span class="ios-browse-label">Mobile Apps</span>
-              </div>
-              <span class="ios-browse-chevron">›</span>
-            </div>
-            <div class="ios-browse-item" data-loc="location-uiux">
-              <div class="ios-browse-item-left">
-                <span class="ios-browse-icon uiux">🎨</span>
-                <span class="ios-browse-label">UI / UX Design</span>
-              </div>
-              <span class="ios-browse-chevron">›</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="ios-browse-section">
-          <div class="ios-browse-section-header">Tags</div>
-          <div class="ios-browse-list">
-            <div class="ios-browse-item" data-loc="tag-featured">
-              <div class="ios-browse-item-left">
-                <span class="ios-tag-dot yellow"></span>
-                <span class="ios-browse-label">Featured</span>
-              </div>
-              <span class="ios-browse-chevron">›</span>
-            </div>
-            <div class="ios-browse-item" data-loc="tag-inprogress">
-              <div class="ios-browse-item-left">
-                <span class="ios-tag-dot blue"></span>
-                <span class="ios-browse-label">In Progress</span>
-              </div>
-              <span class="ios-browse-chevron">›</span>
-            </div>
-            <div class="ios-browse-item" data-loc="tag-complete">
-              <div class="ios-browse-item-left">
-                <span class="ios-tag-dot green"></span>
-                <span class="ios-browse-label">Complete</span>
-              </div>
-              <span class="ios-browse-chevron">›</span>
-            </div>
-          </div>
-        </div>
-      `;
-      
-      browseMenu.querySelectorAll('.ios-browse-item').forEach(el => {
-        el.addEventListener('click', function() {
-          const targetLoc = this.getAttribute('data-loc');
-          navigateTo(targetLoc);
-        });
-      });
-
-      // Update mobile title and back button visibility
-      const mobileTitle = document.getElementById('mobileTitle');
-      const mobileBackBtn = document.getElementById('mobileBackBtn');
-      if (mobileTitle) {
-        mobileTitle.textContent = "Browse";
-        if (mobileBackBtn) mobileBackBtn.style.display = "none";
-      }
-
-      statusItemCount.innerText = `4 Locations, 3 Tags`;
-      return;
-    } else {
-      if (browseMenu) {
-        browseMenu.style.display = "none";
-      }
+    if (browseMenu) {
+      browseMenu.style.display = "none";
     }
 
     // Update mobile title and back button visibility (iOS Files style)
@@ -1146,12 +905,6 @@
         else if (tag === "complete") label = "Complete";
         mobileTitle.textContent = label;
         if (mobileBackBtn) mobileBackBtn.style.display = "";
-      } else if (currentLocation === "recents") {
-        mobileTitle.textContent = "Recents";
-        if (mobileBackBtn) mobileBackBtn.style.display = "none";
-      } else if (currentLocation === "shared") {
-        mobileTitle.textContent = "Shared";
-        if (mobileBackBtn) mobileBackBtn.style.display = "none";
       } else {
         const parts = currentLocation.split('/');
         const subName = parts[parts.length - 1];
@@ -1220,11 +973,10 @@
         gridItem.className = `grid-item ${isSelected ? 'selected' : ''}`;
         gridItem.setAttribute('tabindex', '0');
 
-        gridItem.innerHTML = `
+          gridItem.innerHTML = `
           <div class="grid-item-icon-wrapper">
             <div class="mac-icon-container">
               ${macIconHtml}
-              ${hasTagDot ? `<span class="grid-item-tag" style="background-color: ${tagColor}"></span>` : ''}
             </div>
             <div class="ios-icon-container">
               ${iosIconHtml}
@@ -1573,27 +1325,24 @@
       });
     }
 
-    // Bottom bar tab clicks (iOS Files app style)
+    // Bottom bar category clicks (iOS Files app style)
     const bottomBarItems = finderWindow.querySelectorAll('.bottom-bar-item');
     bottomBarItems.forEach(item => {
       item.addEventListener('click', function() {
         bottomBarItems.forEach(el => el.classList.remove('active'));
         this.classList.add('active');
         
-        const tab = this.getAttribute('data-tab');
+        const cat = this.getAttribute('data-cat');
         selectedItem = null;
+        currentSidebarFilter = "all";
         cleanupColumnsPane();
         
-        if (tab === "browse") {
+        if (cat === "all") {
           currentLocation = "root";
-          renderFinder();
-        } else if (tab === "recents") {
-          currentLocation = "recents";
-          renderFinder();
-        } else if (tab === "shared") {
-          currentLocation = "shared";
-          renderFinder();
+        } else if (cat === "web" || cat === "mobile" || cat === "uiux") {
+          currentLocation = "location-" + cat;
         }
+        renderFinder();
       });
     });
 
@@ -1868,45 +1617,6 @@
 
   // ---- Mobile Dock Control Logic ----
   function initMobileDock() {
-    const track = document.querySelector('.mobile-dock-track');
-    const dots = document.querySelectorAll('.pagination-dot');
-    const hint = document.querySelector('.mobile-dock-hint');
-
-    if (track && dots.length > 0) {
-      // Sync swipe scroll with pagination dots and hint opacity
-      track.addEventListener('scroll', function () {
-        const width = track.clientWidth;
-        if (width === 0) return;
-        
-        const pageIndex = Math.round(track.scrollLeft / width);
-        dots.forEach((dot, index) => {
-          dot.classList.toggle('active', index === pageIndex);
-        });
-
-        // Calculate scroll progress for hint fade-out
-        const maxScroll = track.scrollWidth - width;
-        if (maxScroll > 0) {
-          const progress = track.scrollLeft / maxScroll;
-          if (hint) {
-            hint.style.opacity = Math.max(0, 0.55 * (1 - progress));
-            hint.style.pointerEvents = progress >= 0.9 ? 'none' : 'auto';
-          }
-        }
-      }, { passive: true });
-
-      // Handle clicking pagination dots
-      dots.forEach((dot, index) => {
-        dot.addEventListener('click', function () {
-          const width = track.clientWidth;
-          track.scrollTo({
-            left: index * width,
-            behavior: 'smooth'
-          });
-        });
-      });
-    }
-
-    // Viewport entry animations (Framer Motion replica)
     const skillsSection = document.getElementById('content');
     const statsContainer = document.querySelector('.documenting-stats');
 

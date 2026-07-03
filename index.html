@@ -409,26 +409,36 @@
 
               <!-- Mobile Bottom Tab Bar (iOS Files style, hidden on desktop) -->
               <nav class="finder-bottom-bar">
-                <button class="bottom-bar-item" data-tab="recents" id="bottomBarRecents">
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 6 12 12 16 14"></polyline>
-                  </svg>
-                  <span>Recents</span>
-                </button>
-                <button class="bottom-bar-item" data-tab="shared" id="bottomBarShared">
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-                    <circle cx="12" cy="13" r="2"></circle>
-                    <path d="M8 18a4 4 0 0 1 8 0"></path>
-                  </svg>
-                  <span>Shared</span>
-                </button>
-                <button class="bottom-bar-item active" data-tab="browse" id="bottomBarBrowse">
+                <button class="bottom-bar-item active" data-cat="all" id="bottomBarAll">
                   <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
                     <path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/>
                   </svg>
-                  <span>Browse</span>
+                  <span>All</span>
+                </button>
+                <button class="bottom-bar-item" data-cat="web" id="bottomBarWeb">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                  </svg>
+                  <span>Web</span>
+                </button>
+                <button class="bottom-bar-item" data-cat="mobile" id="bottomBarMobile">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                    <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                  </svg>
+                  <span>Mobile</span>
+                </button>
+                <button class="bottom-bar-item" data-cat="uiux" id="bottomBarUIUX">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"></path>
+                    <circle cx="7.5" cy="10.5" r="1.5" fill="currentColor"></circle>
+                    <circle cx="11.5" cy="7.5" r="1.5" fill="currentColor"></circle>
+                    <circle cx="16.5" cy="9.5" r="1.5" fill="currentColor"></circle>
+                    <circle cx="15.5" cy="14.5" r="1.5" fill="currentColor"></circle>
+                  </svg>
+                  <span>UI/UX</span>
                 </button>
               </nav>
             </div>
@@ -620,81 +630,59 @@
           </div>
         </div>
 
-        <!-- Mobile Swipeable Dock Container -->
+        <!-- Mobile Grid Dock Container -->
         <div class="macos-dock-mobile-container">
           <div class="macos-dock-mobile">
-            <div class="mobile-dock-track">
-              <!-- Page 1 -->
-              <div class="mobile-dock-page" data-page="0">
-                <div class="mobile-dock-item">
-                  <div class="mobile-icon-wrapper">
-                    <img src="Doc icons/html.jpg" alt="HTML" class="mobile-dock-icon">
-                  </div>
-                  <span class="mobile-icon-name">HTML</span>
+            <div class="mobile-dock-grid">
+              <div class="mobile-dock-item">
+                <div class="mobile-icon-wrapper">
+                  <img src="Doc icons/html.jpg" alt="HTML" class="mobile-dock-icon">
                 </div>
-                <div class="mobile-dock-item">
-                  <div class="mobile-icon-wrapper">
-                    <img src="Doc icons/css-3.png" alt="CSS" class="mobile-dock-icon">
-                  </div>
-                  <span class="mobile-icon-name">CSS</span>
-                </div>
-                <div class="mobile-dock-item">
-                  <div class="mobile-icon-wrapper">
-                    <img src="Doc icons/js.png" alt="JavaScript" class="mobile-dock-icon">
-                  </div>
-                  <span class="mobile-icon-name">JavaScript</span>
-                </div>
-                <div class="mobile-dock-item">
-                  <div class="mobile-icon-wrapper">
-                    <img src="Doc icons/python.png" alt="Python" class="mobile-dock-icon">
-                  </div>
-                  <span class="mobile-icon-name">Python</span>
-                </div>
+                <span class="mobile-icon-name">HTML</span>
               </div>
-              
-              <!-- Page 2 -->
-              <div class="mobile-dock-page" data-page="1">
-                <div class="mobile-dock-item">
-                  <div class="mobile-icon-wrapper">
-                    <img src="Doc icons/Google-Antigravity-Icon-Full-Color.png" alt="Antigravity" class="mobile-dock-icon">
-                  </div>
-                  <span class="mobile-icon-name">Antigravity</span>
+              <div class="mobile-dock-item">
+                <div class="mobile-icon-wrapper">
+                  <img src="Doc icons/css-3.png" alt="CSS" class="mobile-dock-icon">
                 </div>
-                <div class="mobile-dock-item">
-                  <div class="mobile-icon-wrapper">
-                    <img src="Doc icons/wix.png" alt="Wix Studio" class="mobile-dock-icon">
-                  </div>
-                  <span class="mobile-icon-name">Wix Studio</span>
+                <span class="mobile-icon-name">CSS</span>
+              </div>
+              <div class="mobile-dock-item">
+                <div class="mobile-icon-wrapper">
+                  <img src="Doc icons/js.png" alt="JavaScript" class="mobile-dock-icon">
                 </div>
-                <div class="mobile-dock-item">
-                  <div class="mobile-icon-wrapper">
-                    <img src="Doc icons/figma.png" alt="Figma" class="mobile-dock-icon">
-                  </div>
-                  <span class="mobile-icon-name">Figma</span>
+                <span class="mobile-icon-name">JavaScript</span>
+              </div>
+              <div class="mobile-dock-item">
+                <div class="mobile-icon-wrapper">
+                  <img src="Doc icons/python.png" alt="Python" class="mobile-dock-icon">
                 </div>
-                <div class="mobile-dock-item">
-                  <div class="mobile-icon-wrapper">
-                    <img src="Doc icons/github.png" alt="GitHub" class="mobile-dock-icon">
-                  </div>
-                  <span class="mobile-icon-name">GitHub</span>
+                <span class="mobile-icon-name">Python</span>
+              </div>
+              <div class="mobile-dock-item">
+                <div class="mobile-icon-wrapper">
+                  <img src="Doc icons/Google-Antigravity-Icon-Full-Color.png" alt="Antigravity" class="mobile-dock-icon">
                 </div>
+                <span class="mobile-icon-name">Antigravity</span>
+              </div>
+              <div class="mobile-dock-item">
+                <div class="mobile-icon-wrapper">
+                  <img src="Doc icons/wix.png" alt="Wix Studio" class="mobile-dock-icon">
+                </div>
+                <span class="mobile-icon-name">Wix Studio</span>
+              </div>
+              <div class="mobile-dock-item">
+                <div class="mobile-icon-wrapper">
+                  <img src="Doc icons/figma.png" alt="Figma" class="mobile-dock-icon">
+                </div>
+                <span class="mobile-icon-name">Figma</span>
+              </div>
+              <div class="mobile-dock-item">
+                <div class="mobile-icon-wrapper">
+                  <img src="Doc icons/github.png" alt="GitHub" class="mobile-dock-icon">
+                </div>
+                <span class="mobile-icon-name">GitHub</span>
               </div>
             </div>
-          </div>
-          
-          <!-- Pagination dots -->
-          <div class="mobile-dock-pagination">
-            <span class="pagination-dot active" data-page="0"></span>
-            <span class="pagination-dot" data-page="1"></span>
-          </div>
-          
-          <!-- Swipe hint -->
-          <div class="mobile-dock-hint">
-            <span>Swipe to explore</span>
-            <svg class="hint-arrow" viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
           </div>
         </div>
 
