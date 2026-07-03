@@ -25,6 +25,12 @@
   --transition: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 html { font-size: 16px; }
 
 body {
@@ -167,6 +173,7 @@ video { display: block; width: 100%; height: 100%; object-fit: cover; }
 .section {
   width: 100%;
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex; align-items: center; justify-content: center;
   background: var(--bg);
   overflow: hidden;
@@ -437,6 +444,7 @@ video { display: block; width: 100%; height: 100%; object-fit: cover; }
   justify-content: center;
   width: 100%;
   min-height: 100vh;
+  min-height: 100dvh;
 }
 
 .ventures-content {
@@ -2551,6 +2559,7 @@ video { display: block; width: 100%; height: 100%; object-fit: cover; }
   overflow: hidden;
   width: 100%;
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   font-family: var(--font);
