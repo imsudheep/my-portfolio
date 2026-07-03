@@ -92,25 +92,20 @@
   // ---- Journey horizontal scroll (sticky + translateX) ----
   const journeySection = document.getElementById('journey');
   const journeyContent = journeySection?.querySelector('.journey-content');
-  const journeyPin = journeySection?.querySelector('.journey-pin');
 
   let jResizeTimer;
-  let cachedVh = 0;
 
   function initJourneyScroll() {
     if (!journeySection || !journeyContent) return 0;
 
-    cachedVh = window.visualViewport?.height ?? window.innerHeight;
-    const maxScroll = Math.max(0, journeyContent.scrollWidth - cachedVh);
+    const vh = window.visualViewport?.height ?? window.innerHeight;
+    const maxScroll = Math.max(0, journeyContent.scrollWidth - vh);
     
     // Scale scroll height on mobile to make it feel snappier and reduce scrolling distance
     const isMobile = window.innerWidth <= 768;
     const multiplier = isMobile ? 0.45 : 1.0;
 
-    journeySection.style.height = (cachedVh + maxScroll * multiplier) + 'px';
-    if (journeyPin) {
-      journeyPin.style.height = cachedVh + 'px';
-    }
+    journeySection.style.height = (vh + maxScroll * multiplier) + 'px';
     return maxScroll * multiplier;
   }
 
@@ -119,7 +114,7 @@
 
     const sectionRect = journeySection.getBoundingClientRect();
     const sectionHeight = journeySection.offsetHeight;
-    const viewportH = cachedVh || window.innerHeight;
+    const viewportH = window.innerHeight;
     const scrollable = sectionHeight - viewportH;
     if (scrollable <= 0) return;
 
@@ -154,6 +149,7 @@
   });
 
   // ---- Dot nav: use journey-pin for position tracking ----
+  const journeyPin = journeySection?.querySelector('.journey-pin');
 
   function onScroll() {
     let closestIndex = 0;
