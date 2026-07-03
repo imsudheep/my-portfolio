@@ -154,7 +154,6 @@
   });
 
   // ---- Dot nav: use journey-pin for position tracking ----
-  const journeyPin = journeySection?.querySelector('.journey-pin');
 
   function onScroll() {
     let closestIndex = 0;
