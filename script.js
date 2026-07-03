@@ -89,64 +89,44 @@
     });
   });
 
-  // ---- Journey horizontal scroll (sticky + translateX) ----
+  // ---- Journey horizontal scroll (GSAP ScrollTrigger) ----
   const journeySection = document.getElementById('journey');
   const journeyContent = journeySection?.querySelector('.journey-content');
 
   let jResizeTimer;
-
-  function initJourneyScroll() {
-    if (!journeySection || !journeyContent) return 0;
-
-    const vh = window.visualViewport?.height ?? window.innerHeight;
-    const maxScroll = Math.max(0, journeyContent.scrollWidth - vh);
-    
-    // Scale scroll height on mobile to make it feel snappier and reduce scrolling distance
-    const isMobile = window.innerWidth <= 768;
-    const multiplier = isMobile ? 0.45 : 1.0;
-
-    journeySection.style.height = (vh + maxScroll * multiplier) + 'px';
-    return maxScroll * multiplier;
-  }
-
-  function updateJourneyScroll() {
-    if (!journeySection || !journeyContent) return;
-
-    const sectionRect = journeySection.getBoundingClientRect();
-    const sectionHeight = journeySection.offsetHeight;
-    const viewportH = window.innerHeight;
-    const scrollable = sectionHeight - viewportH;
-    if (scrollable <= 0) return;
-
-    const progress = Math.max(0, Math.min(1, -sectionRect.top / scrollable));
-    const maxScroll = Math.max(0, journeyContent.scrollWidth - window.innerWidth);
-
-    journeyContent.style.transform = 'translateX(' + (-progress * maxScroll) + 'px)';
-  }
-
   let lastWidth = window.innerWidth;
 
-  window.addEventListener('resize', function () {
-    if (window.innerWidth === lastWidth) return;
-    lastWidth = window.innerWidth;
+  if (journeySection && journeyContent) {
+    gsap.registerPlugin(ScrollTrigger);
 
-    clearTimeout(jResizeTimer);
-    jResizeTimer = setTimeout(function () {
-      initJourneyScroll();
-      updateJourneyScroll();
-      if (typeof renderFinder === 'function') {
-        renderFinder();
+    const getMaxScroll = () => Math.max(0, journeyContent.scrollWidth - window.innerWidth);
+    const getMultiplier = () => (window.innerWidth <= 768 ? 0.45 : 1.0);
+
+    gsap.to(journeyContent, {
+      x: () => -getMaxScroll(),
+      ease: 'none',
+      scrollTrigger: {
+        trigger: journeySection,
+        pin: '.journey-pin',
+        start: 'top top',
+        end: () => `+=${getMaxScroll() * getMultiplier()}`,
+        scrub: true,
+        invalidateOnRefresh: true,
       }
-    }, 100);
-  });
+    });
 
-  initJourneyScroll();
-  document.addEventListener('scroll', updateJourneyScroll, { passive: true });
-  updateJourneyScroll();
-  window.addEventListener('load', function () {
-    initJourneyScroll();
-    updateJourneyScroll();
-  });
+    window.addEventListener('resize', function () {
+      if (window.innerWidth === lastWidth) return;
+      lastWidth = window.innerWidth;
+
+      clearTimeout(jResizeTimer);
+      jResizeTimer = setTimeout(function () {
+        if (typeof renderFinder === 'function') {
+          renderFinder();
+        }
+      }, 100);
+    });
+  }
 
   // ---- Dot nav: use journey-pin for position tracking ----
   const journeyPin = journeySection?.querySelector('.journey-pin');
