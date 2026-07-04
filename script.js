@@ -108,6 +108,7 @@
       scrollTrigger: {
         trigger: journeySection,
         pin: '.journey-pin',
+        pinType: 'transform',
         start: 'top top',
         end: () => `+=${getMaxScroll() * getMultiplier()}`,
         scrub: true,
@@ -128,6 +129,12 @@
     });
 
     window.addEventListener('load', function () {
+      setTimeout(function () {
+        ScrollTrigger.refresh();
+      }, 100);
+    });
+
+    window.addEventListener('pageshow', function (e) {
       ScrollTrigger.refresh();
     });
   }
