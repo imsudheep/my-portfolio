@@ -126,6 +126,10 @@
         }
       }, 100);
     });
+
+    window.addEventListener('load', function () {
+      ScrollTrigger.refresh();
+    });
   }
 
   // ---- Dot nav: use journey-pin for position tracking ----
