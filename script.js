@@ -108,7 +108,6 @@
       scrollTrigger: {
         trigger: journeySection,
         pin: '.journey-pin',
-        pinType: 'transform',
         start: 'top top',
         end: () => `+=${getMaxScroll() * getMultiplier()}`,
         scrub: true,
