@@ -9,7 +9,7 @@
   <link rel="icon" href="/favicon.ico">
   <link rel="stylesheet" href="styles.css?v=10">
   <script>
-    window.addEventListener('error', function(e) {
+    window.addEventListener('error', function (e) {
       console.error('Captured Error:', e.message, 'at', e.filename, 'line', e.lineno);
       const errDiv = document.createElement('div');
       errDiv.style.cssText = 'position:fixed;top:10px;left:10px;right:10px;background:#ef4444;color:white;padding:12px;z-index:99999;font-family:monospace;font-size:12px;border-radius:6px;box-shadow:0 4px 6px rgba(0,0,0,0.15);line-height:1.4;';
@@ -74,7 +74,9 @@
             <span class="hero-name-line">I'm</span>
             <span class="hero-name-line">Sudheep</span>
           </h1>
-          <p class="hero-tagline">An undergraduate student passionate about <span class="apple-selection">web development.<span class="selection-handle handle-start"></span><span class="selection-handle handle-end"></span></span></p>
+          <p class="hero-tagline">An undergraduate student passionate about <span class="apple-selection">web
+              development.<span class="selection-handle handle-start"></span><span
+                class="selection-handle handle-end"></span></span></p>
 
 
           <div class="hero-education">
@@ -167,7 +169,7 @@
                 </div>
               </div>
               <div class="timeline-card" style="--rotate: -5deg; --delay: 0.6s">
-                <img src="public/media/pitch-win.jpg" alt="Pitch Win">
+                <img src="Journey photos/freelance 1.jpeg" alt="Pitch Win">
                 <div class="timeline-card-info">
                   <span class="timeline-card-title">PITCH WIN · 2025</span>
                   <span class="timeline-card-desc">Won the entrepreneurship pitch competition.</span>
@@ -203,7 +205,8 @@
         <div class="ventures-left">
           <span class="chapter-label">CHAPTER TWO</span>
           <h2 class="section-title-large">projects</h2>
-          <p class="ventures-subtitle">Think of this as my computer placed right in your hands — open it up and explore every project I've built. Each one has a story.</p>
+          <p class="ventures-subtitle">Think of this as my computer placed right in your hands — open it up and explore
+            every project I've built. Each one has a story.</p>
 
           <a href="https://github.com/imsudheep" target="_blank" class="btn-github-view">
             <span>View on GitHub</span>
@@ -268,7 +271,8 @@
                   <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
                 <input type="text" id="finderSearchInput" placeholder="Search" aria-label="Search files and folders">
-                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mic-icon">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round" class="mic-icon">
                   <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path>
                   <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
                   <line x1="12" y1="19" x2="12" y2="22"></line>
@@ -277,7 +281,8 @@
 
               <!-- Mobile search toggle (iOS style, hidden on desktop) -->
               <button class="mobile-search-btn" id="mobileSearchBtn" aria-label="Options">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#007aff" stroke-width="2" class="ellipsis-circle-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#007aff" stroke-width="2"
+                  class="ellipsis-circle-icon">
                   <circle cx="12" cy="12" r="9" stroke="#007aff" stroke-width="2"></circle>
                   <circle cx="8" cy="12" r="1.2" fill="#007aff"></circle>
                   <circle cx="12" cy="12" r="1.2" fill="#007aff"></circle>
@@ -411,28 +416,36 @@
               <nav class="finder-bottom-bar">
                 <button class="bottom-bar-item active" data-cat="all" id="bottomBarAll">
                   <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                    <path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/>
+                    <path
+                      d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z" />
                   </svg>
                   <span>All</span>
                 </button>
                 <button class="bottom-bar-item" data-cat="web" id="bottomBarWeb">
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="10"></circle>
                     <line x1="2" y1="12" x2="22" y2="12"></line>
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    <path
+                      d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                    </path>
                   </svg>
                   <span>Web</span>
                 </button>
                 <button class="bottom-bar-item" data-cat="mobile" id="bottomBarMobile">
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
                     <line x1="12" y1="18" x2="12.01" y2="18"></line>
                   </svg>
                   <span>Mobile</span>
                 </button>
                 <button class="bottom-bar-item" data-cat="uiux" id="bottomBarUIUX">
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"></path>
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z">
+                    </path>
                     <circle cx="7.5" cy="10.5" r="1.5" fill="currentColor"></circle>
                     <circle cx="11.5" cy="7.5" r="1.5" fill="currentColor"></circle>
                     <circle cx="16.5" cy="9.5" r="1.5" fill="currentColor"></circle>
@@ -660,7 +673,8 @@
               </div>
               <div class="mobile-dock-item">
                 <div class="mobile-icon-wrapper">
-                  <img src="Doc icons/Google-Antigravity-Icon-Full-Color.png" alt="Antigravity" class="mobile-dock-icon">
+                  <img src="Doc icons/Google-Antigravity-Icon-Full-Color.png" alt="Antigravity"
+                    class="mobile-dock-icon">
                 </div>
                 <span class="mobile-icon-name">Antigravity</span>
               </div>
@@ -714,7 +728,11 @@
         </div>
         <div class="about-right">
           <h2 class="about-main-text">
-            I'm that guy in every class who somehow ends up building the project everyone was only talking about. I love turning random ideas into things people can actually click, explore, and use. Most of my free time disappears into redesigning interfaces, polishing tiny details, and building side projects I never planned to start. I'm still learning every day, and that's my favorite part—there's always something new to figure out. My goal is simple: build products people genuinely enjoy using.
+            I'm that guy in every class who somehow ends up building the project everyone was only talking about. I love
+            turning random ideas into things people can actually click, explore, and use. Most of my free time
+            disappears into redesigning interfaces, polishing tiny details, and building side projects I never planned
+            to start. I'm still learning every day, and that's my favorite part—there's always something new to figure
+            out. My goal is simple: build products people genuinely enjoy using.
           </h2>
         </div>
       </div>
@@ -725,33 +743,40 @@
       <div class="contact-content">
         <span class="chapter-label">CONTACT ME</span>
         <h2 class="section-title-xl contact-title">let's start<br>something</h2>
-        <p class="contact-subtitle">I'm open to collaborations on products, film, or anything that looks interesting. If you think we should work together, reach out!</p>
+        <p class="contact-subtitle">I'm open to collaborations on products, film, or anything that looks interesting. If
+          you think we should work together, reach out!</p>
         <div class="contact-icons">
           <a href="mailto:sudheepsivakumar2006@gmail.com" class="contact-icon-link" aria-label="Email">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-              <polyline points="22,6 12,13 2,6"/>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
             </svg>
           </a>
           <a href="https://github.com/imsudheep" target="_blank" class="contact-icon-link" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
             </svg>
           </a>
-          <a href="https://www.linkedin.com/in/sudheepsivakumar/" target="_blank" class="contact-icon-link" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-              <rect x="2" y="9" width="4" height="12"/>
-              <circle cx="4" cy="4" r="2"/>
+          <a href="https://www.linkedin.com/in/sudheepsivakumar/" target="_blank" class="contact-icon-link"
+            aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" />
             </svg>
           </a>
           <a href="Sudheep_VS_Resume.pdf.pdf" download class="contact-icon-link" aria-label="Resume">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/>
-              <line x1="16" y1="17" x2="8" y2="17"/>
-              <polyline points="10 9 9 9 8 9"/>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+              <polyline points="10 9 9 9 8 9" />
             </svg>
           </a>
         </div>

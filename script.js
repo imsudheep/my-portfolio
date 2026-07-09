@@ -168,164 +168,124 @@
 
   // ============ MAC OS FINDER APP CONTROLLER ============
   const PROJECTS_DATA = {
-    dilemaa: {
-      name: "Dilemaa",
-      type: "Web App",
-      category: "web",
-      tag: "tag-featured",
-      dotColor: "var(--mac-yellow)",
-      updatedText: "Updated 2 days ago",
-      updatedDate: "2 days ago",
-      icon: "public/media/dilemaa.png",
-      description: "A Q&A social platform where people share real life dilemmas and get advice.",
-      techStack: ["React Native", "Node.js", "Supabase", "Azure", "ML API"],
-      status: "Complete",
-      statusColor: "var(--mac-green)",
-      link: "https://github.com",
-      files: [
-        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "2 days ago", iconClass: "file-chrome", isWebLink: true, link: "https://dilemaa.app" },
-        { name: "about.md", type: "file", kind: "Markdown", size: "4 KB", updatedDate: "2 days ago", iconClass: "file-text", preview: "# Dilemma\n\n## Project Overview\nA Q&A social platform where people share real life dilemmas and get advice from the community.\n\n## Why I Built It\nI noticed people often hesitate to share personal dilemmas publicly. I wanted a safe, anonymous space where anyone could seek advice without judgment.\n\n## Features\n- Anonymous dilemma posting with category tags\n- Upvote/downvote system for community-driven advice\n- Real-time comment threads with reply nesting\n- Personalized dashboard tracking your dilemmas\n- ML-powered content moderation for safe conversations\n- Push notifications for replies and milestones\n- Dark mode UI with smooth animations\n\n## Tech Stack\nReact Native, Node.js, Supabase, Azure, ML API\n\n## Challenges\n- Implementing real-time updates using WebSockets\n- Building a custom moderation ML pipeline using TensorFlow.js\n- Optimizing database queries reducing load times by 60%\n- Designing anonymous identity system with optional verification\n\n## What I Learned\nThis project taught me how to build scalable real-time systems, integrate machine learning for content moderation, and design privacy-first social features." },
-        { name: "preview.png", type: "file", kind: "PNG Image", size: "1.2 MB", updatedDate: "2 days ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/dilemaa.png" }
-      ]
-    },
-    nostalgia: {
-      name: "Nostalgia",
-      type: "Web App",
-      category: "web",
-      tag: "tag-featured",
-      dotColor: "var(--mac-yellow)",
-      updatedText: "Updated 1 week ago",
-      updatedDate: "1 week ago",
-      icon: "public/media/nostalgia_app.png",
-      description: "You talk like you would to a friend, and Nostalgia turns the conversation into structured journals you can revisit.",
-      techStack: ["React Native", "Supabase", "AI Conversation Flows"],
-      status: "Complete",
-      statusColor: "var(--mac-green)",
-      link: "https://github.com",
-      files: [
-        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "1 week ago", iconClass: "file-chrome", isWebLink: true, link: "https://nostalgia-journal.app" },
-        { name: "about.md", type: "file", kind: "Markdown", size: "4 KB", updatedDate: "1 week ago", iconClass: "file-text", preview: "# Nostalgia\n\n## Project Overview\nAn AI-powered conversational journal designed to reduce burnout. Talk naturally and let Nostalgia turn your conversations into structured journals you can revisit.\n\n## Why I Built It\nTraditional journaling feels like a chore. I wanted to make it as natural as talking to a friend while preserving the therapeutic benefits of reflective writing.\n\n## Features\n- Natural conversation-based journaling\n- AI-powered sentiment analysis and mood tracking\n- Auto-generated weekly reflection summaries\n- Secure cloud sync across devices\n- Privacy-first design with end-to-end encryption\n- Search and filter past entries by mood, date, or topic\n\n## Tech Stack\nReact Native, Supabase, Google Generative AI, Custom NLP Pipeline\n\n## Challenges\n- Designing conversation flow that feels natural, not interrogative\n- Implementing client-side encryption for privacy\n- AI prompt engineering for accurate journal structuring\n- Optimizing for low-latency conversation processing\n\n## What I Learned\nI learned how to design conversational AI interfaces that feel human, implement client-side encryption, and build prompt engineering systems for accurate content structuring." },
-        { name: "preview.png", type: "file", kind: "PNG Image", size: "1.1 MB", updatedDate: "1 week ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/nostalgia_app.png" }
-      ]
-    },
-    sae: {
-      name: "Sae",
-      type: "Mobile App",
-      category: "mobile",
-      tag: "tag-featured",
-      dotColor: "var(--mac-yellow)",
-      updatedText: "Updated 3 days ago",
-      updatedDate: "3 days ago",
-      icon: "public/media/sae.png",
-      description: "A Korean-learning app that feels like a game: S-curve paths, a magpie mascot, and focused Hangul drills.",
-      techStack: ["Custom Lesson Engine", "JSON Scenes", "React Native"],
-      status: "Complete",
-      statusColor: "var(--mac-green)",
-      link: "https://github.com",
-      files: [
-        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "3 days ago", iconClass: "file-chrome", isWebLink: true, link: "https://sae-hangul.app" },
-        { name: "about.md", type: "file", kind: "Markdown", size: "4 KB", updatedDate: "3 days ago", iconClass: "file-text", preview: "# Sae\n\n## Project Overview\nA Korean-learning app that feels like a game — S-curve progress paths, a magpie mascot, and focused Hangul drills.\n\n## Why I Built It\nI wanted to learn Korean but found existing apps boring. I built Sae to make language learning feel like an adventure game.\n\n## Features\n- S-curve visual progress system for motivational learning\n- Magpie mascot that celebrates milestones\n- Bite-sized Hangul drills with instant feedback\n- Spaced repetition for long-term retention\n- Stroke order animations for every character\n- Pronunciation guide with audio examples\n- Achievement badges and learning streaks\n\n## Tech Stack\nReact Native, Custom Lesson Engine, JSON Scene System\n\n## Challenges\n- Building a flexible scene-based lesson engine from scratch\n- Designing intuitive stroke order animations\n- Implementing spaced repetition algorithm\n- Optimizing for offline-first usage\n\n## What I Learned\nI learned how to build a configurable game-like lesson engine, implement effective spaced repetition, and create engaging educational animations." },
-        { name: "preview.png", type: "file", kind: "PNG Image", size: "1.3 MB", updatedDate: "3 days ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/sae.png" }
-      ]
-    },
-    portfolio: {
-      name: "Personal Portfolio",
+    harshavardhan: {
+      name: "Harshavardhan Portfolio",
       type: "Web App",
       category: "web",
       tag: "tag-complete",
       dotColor: "var(--mac-green)",
       updatedText: "Updated today",
       updatedDate: "Today",
-      icon: "public/media/ben.png",
-      description: "A pixel-perfect, premium personal portfolio website showcasing projects, skills, and life milestones.",
-      techStack: ["HTML", "CSS", "JavaScript", "Scroll animations"],
-      status: "Complete",
-      statusColor: "var(--mac-green)",
-      link: "https://github.com",
-      files: [
-        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "Today", iconClass: "file-chrome", isWebLink: true, link: "https://imsudheep.github.io" },
-        { name: "about.md", type: "file", kind: "Markdown", size: "4 KB", updatedDate: "Today", iconClass: "file-text", preview: "# Personal Portfolio\n\n## Project Overview\nA pixel-perfect, premium personal portfolio website showcasing projects, skills, and life milestones.\n\n## Why I Built It\nI wanted to create a portfolio that stands out — not just a grid of cards, but an interactive experience that reflects my personality and skills.\n\n## Features\n- macOS Finder replica with full file browsing\n- macOS Dock with magnification physics\n- Interactive hero section with mouse-follow animation\n- Horizontal timeline with parallax scrolling\n- Responsive design (mobile to desktop)\n- iOS Files-style mobile adaptation\n- Smooth chapter-based navigation\n- Custom scrollbar styling\n\n## Tech Stack\nHTML, CSS, JavaScript, Scroll animations, Elza Font Family\n\n## Challenges\n- Implementing a fully functional file browser from scratch\n- Building realistic macOS Dock physics with spring animations\n- Creating responsive design that works across all devices\n- Optimizing animations for 60fps performance\n\n## What I Learned\nThis project taught me advanced CSS animations, vanilla JavaScript architecture, responsive design patterns, and how to create immersive web experiences." },
-        { name: "preview.png", type: "file", kind: "PNG Image", size: "1.5 MB", updatedDate: "Today", iconClass: "file-img", isImage: true, imageSrc: "public/media/ben.png" }
-      ]
-    },
-    habit: {
-      name: "Habit Tracker",
-      type: "Web App",
-      category: "web",
-      tag: "tag-inprogress",
-      dotColor: "var(--mac-blue)",
-      updatedText: "Updated 4 days ago",
-      updatedDate: "4 days ago",
-      icon: "public/media/fitness.png",
-      description: "A beautiful habit tracker with streak building, rich charts, and gamified reward systems.",
-      techStack: ["React", "CSS Variables", "Chart.js", "LocalStorage"],
-      status: "In Progress",
-      statusColor: "var(--mac-blue)",
-      link: "https://github.com",
-      files: [
-        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "4 days ago", iconClass: "file-chrome", isWebLink: true, link: "https://habit-tracker.app" },
-        { name: "about.md", type: "file", kind: "Markdown", size: "4 KB", updatedDate: "4 days ago", iconClass: "file-text", preview: "# Habit Tracker\n\n## Project Overview\nA beautiful habit tracker with streak building, rich charts, and gamified reward systems to keep you motivated every day.\n\n## Why I Built It\nI struggled with maintaining habits and found existing trackers either too complex or too boring. I built something that makes habit tracking actually fun.\n\n## Features\n- Custom habit creation with flexible scheduling\n- Visual streak calendar with daily check-ins\n- Interactive charts showing progress over time\n- Gamified rewards system with achievements\n- Dark/light theme support\n- Weekly and monthly progress reports\n- Reminder notifications\n- Data export functionality\n\n## Tech Stack\nReact, CSS Variables, Chart.js, LocalStorage\n\n## Challenges\n- Building a flexible habit scheduling system\n- Implementing streak calculation algorithm\n- Creating responsive charts that work on mobile\n- Designing gamification that actually motivates\n\n## What I Learned\nI learned React state management with Context API, data visualization with Chart.js, and how to design gamification systems that drive real behavior change." },
-        { name: "preview.png", type: "file", kind: "PNG Image", size: "1.2 MB", updatedDate: "4 days ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/fitness.png" }
-      ]
-    },
-    skacas: {
-      name: "SKACAS Redesign",
-      type: "UI / UX",
-      category: "uiux",
-      tag: "tag-complete",
-      dotColor: "var(--mac-green)",
-      updatedText: "Updated 1 week ago",
-      updatedDate: "1 week ago",
       icon: "public/media/business.png",
-      description: "Redesigning the Sri Krishna Adithya College of Arts and Science website UI to be modern and user-friendly.",
-      techStack: ["Figma", "UI Design", "Information Architecture"],
+      description: "Precision-driven portfolio site for a short-form video editor highlighting editing insights.",
+      techStack: ["HTML", "CSS", "JavaScript"],
       status: "Complete",
       statusColor: "var(--mac-green)",
-      link: "https://figma.com",
+      link: "https://www.h4rshavardhan.me/",
       files: [
-        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "1 week ago", iconClass: "file-chrome", isWebLink: true, link: "https://skacas-redesign.figma.com" },
-        { name: "about.md", type: "file", kind: "Markdown", size: "4 KB", updatedDate: "1 week ago", iconClass: "file-text", preview: "# SKACAS Redesign\n\n## Project Overview\nRedesigning the Sri Krishna Adithya College of Arts and Science website UI to be modern, accessible, and user-friendly.\n\n## Why I Built It\nThe college website was outdated and hard to navigate. I wanted to give it a modern makeover while keeping the institutional identity intact.\n\n## Features\n- Modern typography hierarchy\n- Accessible color palette (WCAG AA compliant)\n- Consistent component library\n- Responsive grid system\n- Micro-interactions and animations\n- Screens: Homepage, About, Academics, Admissions, Student Life, Contact, Faculty, News\n\n## Tech Stack\nFigma, UI Design, Information Architecture\n\n## Challenges\n- Simplifying complex navigation into intuitive flows\n- Creating a scalable design system\n- Ensuring accessibility for diverse users\n- Balancing modern design with institutional branding\n\n## What I Learned\nThis project deepened my understanding of design systems, information architecture, accessibility standards, and how to balance modern aesthetics with institutional requirements." },
-        { name: "preview.png", type: "file", kind: "PNG Image", size: "1.4 MB", updatedDate: "1 week ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/business.png" }
+        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "Today", iconClass: "file-chrome", isWebLink: true, link: "https://www.h4rshavardhan.me/" },
+        { name: "about.md", type: "file", kind: "Markdown", size: "4 KB", updatedDate: "Today", iconClass: "file-text", preview: "# Harshavardhan Portfolio\n\n## Project Overview\nA precision-driven video editing portfolio for a short-form video editor designed to help founders build personal brands.\n\n## Why I Built It\nTo create an interactive, Notion-styled showcase of cinematic and structured video editing work, enabling prospective clients to easily preview raw vs. edited footage.\n\n## Features\n- Interactive macOS Finder style folder navigation for projects\n- Live video comparison player for Raw vs. Edited footage\n- Editing Insights popup explaining the narrative decisions behind each cut\n- Notion-style clean design aesthetic\n- Accordion sections detail emotional arc engineering and color grading\n\n## Tech Stack\nHTML, CSS, JavaScript, SVG Animations\n\n## Challenges\n- Building a nested macOS folder simulation inside a Notion layout\n- Syncing multiple video tracks to compare raw vs edited timelines\n\n## What I Learned\nLearned how to design high-retention interactive pages, integrate responsive video popups, and optimize clean typography for storytelling." },
+        { name: "preview.png", type: "file", kind: "PNG Image", size: "1.2 MB", updatedDate: "Today", iconClass: "file-img", isImage: true, imageSrc: "public/media/business.png" }
       ]
     },
-    photo: {
-      name: "Photo Studio",
+    ananya: {
+      name: "Ananya Portfolio",
       type: "Web App",
       category: "web",
       tag: "tag-complete",
       dotColor: "var(--mac-green)",
-      updatedText: "Updated 2 weeks ago",
-      updatedDate: "2 weeks ago",
+      updatedText: "Updated today",
+      updatedDate: "Today",
       icon: "public/media/travel.png",
-      description: "A portfolio platform for photographers to showcase, organize, and license their works.",
-      techStack: ["Next.js", "Tailwind CSS", "Sanity CMS", "Cloudinary"],
+      description: "Elegant, editorial video editing portfolio website showcasing storytelling and high-retention clips.",
+      techStack: ["HTML", "CSS", "JavaScript"],
       status: "Complete",
       statusColor: "var(--mac-green)",
-      link: "https://github.com",
+      link: "https://imsudheep.github.io/ananya-s-portfolio/",
       files: [
-        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "2 weeks ago", iconClass: "file-chrome", isWebLink: true, link: "https://photo-studio.app" },
-        { name: "about.md", type: "file", kind: "Markdown", size: "4 KB", updatedDate: "2 weeks ago", iconClass: "file-text", preview: "# Photo Studio\n\n## Project Overview\nA portfolio platform for photographers to showcase, organize, and license their work professionally.\n\n## Why I Built It\nPhotographers deserve a beautiful, professional portfolio site that handles everything from showcasing to licensing and print sales.\n\n## Features\n- Customizable portfolio templates\n- High-resolution image galleries with lightbox\n- Client proofing galleries with password protection\n- Integrated print store with fulfillment\n- Image licensing and watermarking\n- SEO optimization for photographers\n- Blog with markdown support\n- Contact form with file upload\n\n## Tech Stack\nNext.js, Tailwind CSS, Sanity CMS, Cloudinary, Stripe\n\n## Challenges\n- Implementing responsive image grids that work at any scale\n- Building client proofing system with feedback collection\n- Integrating Stripe for seamless print purchases\n- Optimizing image loading with lazy loading and blur placeholders\n\n## What I Learned\nI learned Next.js server-side rendering, headless CMS architecture, Stripe payment integration, and advanced image optimization techniques." },
-        { name: "preview.png", type: "file", kind: "PNG Image", size: "1.3 MB", updatedDate: "2 weeks ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/travel.png" }
+        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "Today", iconClass: "file-chrome", isWebLink: true, link: "https://imsudheep.github.io/ananya-s-portfolio/" },
+        { name: "about.md", type: "file", kind: "Markdown", size: "4 KB", updatedDate: "Today", iconClass: "file-text", preview: "# Ananya Portfolio\n\n## Project Overview\nAn elegant, luxury-aesthetic portfolio website for a professional video editor specializing in YouTube storytelling, brand narratives, and short-form content.\n\n## Why I Built It\nTo showcase high-retention editing techniques with a focus on editorial style, typography, and visual pacing that helps creators grow their channels.\n\n## Features\n- Premium minimalist aesthetic with serif typography\n- Floating chat and Call-To-Action buttons\n- Responsive visual grids for video previews and client testimonials\n- Interactive hamburger menu with smooth slide transitions\n\n## Tech Stack\nHTML, CSS, JavaScript, FontAwesome\n\n## Challenges\n- Creating a responsive layout that matches high-end editorial magazines\n- Ensuring fast loading times for video-heavy design showcases\n\n## What I Learned\nMastered fluid layouts, typography hierarchies, and premium aesthetic design patterns." },
+        { name: "preview.png", type: "file", kind: "PNG Image", size: "1.2 MB", updatedDate: "Today", iconClass: "file-img", isImage: true, imageSrc: "public/media/travel.png" }
       ]
     },
-    learning: {
-      name: "Learning Hub",
+    wattif: {
+      name: "1WattIf",
       type: "Web App",
       category: "web",
       tag: "tag-complete",
       dotColor: "var(--mac-green)",
-      updatedText: "Updated 3 weeks ago",
-      updatedDate: "3 weeks ago",
+      updatedText: "Updated today",
+      updatedDate: "Today",
       icon: "public/media/student.png",
-      description: "An online platform where students can collaborate, share lecture notes, and study together.",
-      techStack: ["React", "GraphQL", "Express", "MongoDB"],
+      description: "A high-end minimalist brand and newsletter platform dedicated to intellectual curiosity and reflection.",
+      techStack: ["HTML", "CSS", "JavaScript"],
       status: "Complete",
       statusColor: "var(--mac-green)",
-      link: "https://github.com",
+      link: "https://www.1wattif.in/",
       files: [
-        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "3 weeks ago", iconClass: "file-chrome", isWebLink: true, link: "https://learning-hub.app" },
-        { name: "about.md", type: "file", kind: "Markdown", size: "4 KB", updatedDate: "3 weeks ago", iconClass: "file-text", preview: "# Learning Hub\n\n## Project Overview\nAn online platform where students can collaborate, share lecture notes, and study together in virtual study rooms.\n\n## Why I Built It\nStudying alone is hard. I wanted to create a space where students could learn together, share resources, and stay motivated as a community.\n\n## Features\n- Virtual study rooms with real-time collaboration\n- Shared notes and resource library\n- Interactive whiteboard for group study\n- Pomodoro timer with group synchronization\n- Progress tracking and study analytics\n- Discussion forums for each subject\n- File sharing with preview support\n- Calendar integration for study schedules\n\n## Tech Stack\nReact, GraphQL, Express, MongoDB, Socket.io, Redis\n\n## Challenges\n- Building real-time collaboration features with low latency\n- Designing scalable GraphQL schema for complex data relationships\n- Implementing efficient file storage and preview generation\n- Creating engaging gamification system for study motivation\n\n## What I Learned\nI learned GraphQL API design, WebSocket real-time communication, microservices architecture, and how to build engaging collaborative learning experiences." },
-        { name: "preview.png", type: "file", kind: "PNG Image", size: "1.2 MB", updatedDate: "3 weeks ago", iconClass: "file-img", isImage: true, imageSrc: "public/media/student.png" }
+        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "Today", iconClass: "file-chrome", isWebLink: true, link: "https://www.1wattif.in/" },
+        { name: "about.md", type: "file", kind: "Markdown", size: "4 KB", updatedDate: "Today", iconClass: "file-text", preview: "# 1WattIf\n\n## Project Overview\nA modern, thought-provoking brand platform and weekly newsletter ecosystem dedicated to slowing down and asking deeper, better questions in an AI-dominated world.\n\n## Why I Built It\nTo build a minimalist, distraction-free space that inspires intellectual curiosity and challenges daily assumptions through structured reflections, books, and journals.\n\n## Features\n- High-end minimalist design with a grid layout and clean typography\n- Integrated newsletter subscription flow\n- Thought cards categorizing the value of books, journals, and deep thinking\n- Carbon-fibre background textures and smooth CSS animations\n\n## Tech Stack\nHTML, CSS, JavaScript, SVG Graphics\n\n## Challenges\n- Balancing whitespace and high contrast for a distraction-free reading experience\n- Designing a highly interactive newsletter subscription card with custom input validation\n\n## What I Learned\nDeepened understanding of content-first web layouts, brand consistency, and minimal CSS-only responsive designs." },
+        { name: "preview.png", type: "file", kind: "PNG Image", size: "1.2 MB", updatedDate: "Today", iconClass: "file-img", isImage: true, imageSrc: "public/media/student.png" }
+      ]
+    },
+    rebrew: {
+      name: "Rebrew",
+      type: "Web App",
+      category: "web",
+      tag: "tag-complete",
+      dotColor: "var(--mac-green)",
+      updatedText: "Updated today",
+      updatedDate: "Today",
+      icon: "public/media/hotel.png",
+      description: "Ultra-premium interactive scrollytelling web experience for a luxury slow-crafted grape beverage.",
+      techStack: ["Canvas API", "HTML", "CSS", "JavaScript"],
+      status: "Complete",
+      statusColor: "var(--mac-green)",
+      link: "https://imsudheep.github.io/rebrew/",
+      files: [
+        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "Today", iconClass: "file-chrome", isWebLink: true, link: "https://imsudheep.github.io/rebrew/" },
+        { name: "about.md", type: "file", kind: "Markdown", size: "4 KB", updatedDate: "Today", iconClass: "file-text", preview: "# Rebrew\n\n## Project Overview\nAn ultra-premium, interactive scrollytelling web experience for REBREW, a slow-crafted luxury grape beverage.\n\n## Why I Built It\nTo push the boundaries of storytelling by building an immersive, hardware-accelerated scroll-driven product journey.\n\n## Features\n- Immersive Apple-style canvas scrollytelling showing grape harvesting to bottling\n- Custom premium preloader with a percent indicator and contextual taglines\n- Floating glassmorphism navigation menu\n- High-end performance optimization for 60fps animations\n\n## Tech Stack\nCanvas API, HTML, CSS, JavaScript, Scroll Animations\n\n## Challenges\n- Developing a synchronized frame-by-frame canvas rendering engine bound to scroll position\n- Preloading massive high-resolution image sequences efficiently\n\n## What I Learned\nLearned advanced Canvas API manipulation, scroll-bound physics, and asset preloading techniques." },
+        { name: "preview.png", type: "file", kind: "PNG Image", size: "1.2 MB", updatedDate: "Today", iconClass: "file-img", isImage: true, imageSrc: "public/media/hotel.png" }
+      ]
+    },
+    vivahacine: {
+      name: "Vivaha Cine",
+      type: "Web App",
+      category: "web",
+      tag: "tag-complete",
+      dotColor: "var(--mac-green)",
+      updatedText: "Updated today",
+      updatedDate: "Today",
+      icon: "public/media/life.png",
+      description: "Sophisticated editorial wedding film photography and cinematic storytelling portfolio.",
+      techStack: ["HTML", "CSS", "JavaScript"],
+      status: "Complete",
+      statusColor: "var(--mac-green)",
+      link: "https://imsudheep.github.io/vivahacine/",
+      files: [
+        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "Today", iconClass: "file-chrome", isWebLink: true, link: "https://imsudheep.github.io/vivahacine/" },
+        { name: "about.md", type: "file", kind: "Markdown", size: "4 KB", updatedDate: "Today", iconClass: "file-text", preview: "# Vivaha Cine\n\n## Project Overview\nA luxury, editorial wedding film photography and cinematography portfolio designed for 'the new romantics.'\n\n## Why I Built It\nTo capture and present wedding stories through a quiet, intentional, and deeply cinematic ethos.\n\n## Features\n- Editorial layout with sophisticated typography (Playfair Display)\n- Interactive portfolio viewer categorizing Weddings, Events, Portraits, and Editorials\n- Minimalist photo distribution with hover-to-reveal image cards\n- Clean accordion-style details for project details and pricing packages\n\n## Tech Stack\nHTML, CSS, JavaScript, Unsplash API\n\n## Challenges\n- Designing a smooth, fluid image gallery transitions without external libraries\n- Building a responsive grid that preserves the high-end editorial aspect ratios of photos\n\n## What I Learned\nGained experience in high-end design aesthetics, image aspect-ratio management, and micro-interactions." },
+        { name: "preview.png", type: "file", kind: "PNG Image", size: "1.2 MB", updatedDate: "Today", iconClass: "file-img", isImage: true, imageSrc: "public/media/life.png" }
+      ]
+    },
+    gotfitnss: {
+      name: "GOT FITNEZZ",
+      type: "Web App",
+      category: "web",
+      tag: "tag-complete",
+      dotColor: "var(--mac-green)",
+      updatedText: "Updated today",
+      updatedDate: "Today",
+      icon: "public/media/fitness.png",
+      description: "High-energy premium gym landing page in Palladam featuring CrossFit coaching and modern facilities.",
+      techStack: ["Tailwind CSS", "HTML", "JavaScript"],
+      status: "Complete",
+      statusColor: "var(--mac-green)",
+      link: "https://imsudheep.github.io/got-fitnss/",
+      files: [
+        { name: "index.html", type: "file", kind: "HTML Document", size: "2 KB", updatedDate: "Today", iconClass: "file-chrome", isWebLink: true, link: "https://imsudheep.github.io/got-fitnss/" },
+        { name: "about.md", type: "file", kind: "Markdown", size: "4 KB", updatedDate: "Today", iconClass: "file-text", preview: "# GOT FITNEZZ\n\n## Project Overview\nA high-energy, premium fitness center landing page for 'Gears Of Thor' (GOT FITNEZZ) gym in Palladam.\n\n## Why I Built It\nTo create a motivational digital presence featuring expert coaching, CrossFit programs, and state-of-the-art facilities with a high-conversion sign-up flow.\n\n## Features\n- Neon green and dark mode color scheme representing high-energy workout environments\n- Sticky glassmorphic navigation bar with scroll state changes\n- Custom Tailwind CSS styling with neon drop shadows\n- Integrated WhatsApp chat integration for quick trial scheduling\n\n## Tech Stack\nTailwind CSS, HTML, JavaScript\n\n## Challenges\n- Implementing high-impact responsive visual components using Tailwind CSS\n- Optimizing performance for high-resolution background hero images\n\n## What I Learned\nLearned Tailwind configuration, modern card layout designs, and conversion rate optimization (CRO) tactics." },
+        { name: "preview.png", type: "file", kind: "PNG Image", size: "1.2 MB", updatedDate: "Today", iconClass: "file-img", isImage: true, imageSrc: "public/media/fitness.png" }
       ]
     }
   };
@@ -1213,6 +1173,8 @@
     let modalBodyHtml = "";
     if (item.isImage) {
       modalBodyHtml = `<img src="${item.imageSrc}" class="mac-modal-img" alt="${item.name}">`;
+    } else if (item.kind === "Markdown" && item.preview) {
+      modalBodyHtml = `<div class="mac-modal-markdown">${renderMarkdown(item.preview)}</div>`;
     } else if (item.preview) {
       modalBodyHtml = `<pre class="mac-modal-code">${escapeHtml(item.preview)}</pre>`;
     } else {
@@ -1249,6 +1211,61 @@
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#039;");
+  }
+
+  function renderMarkdown(text) {
+    if (!text) return "";
+    const lines = text.split('\n');
+    let html = "";
+    let inList = false;
+
+    for (let i = 0; i < lines.length; i++) {
+      let line = lines[i];
+      const trimmed = line.trim();
+
+      // Handle bullet lists
+      if (trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
+        if (!inList) {
+          html += '<ul class="md-list">';
+          inList = true;
+        }
+        const itemText = trimmed.substring(2);
+        html += `<li>${parseInlineMarkdown(itemText)}</li>`;
+      } else {
+        if (inList) {
+          html += '</ul>';
+          inList = false;
+        }
+        
+        // Handle headers
+        if (trimmed.startsWith('# ')) {
+          html += `<h1 class="md-h1">${parseInlineMarkdown(trimmed.substring(2))}</h1>`;
+        } else if (trimmed.startsWith('## ')) {
+          html += `<h2 class="md-h2">${parseInlineMarkdown(trimmed.substring(3))}</h2>`;
+        } else if (trimmed.startsWith('### ')) {
+          html += `<h3 class="md-h3">${parseInlineMarkdown(trimmed.substring(4))}</h3>`;
+        } else if (trimmed === '') {
+          // Empty line
+        } else {
+          // Normal paragraph
+          html += `<p class="md-p">${parseInlineMarkdown(trimmed)}</p>`;
+        }
+      }
+    }
+
+    if (inList) {
+      html += '</ul>';
+    }
+
+    return html;
+  }
+
+  function parseInlineMarkdown(text) {
+    const escaped = escapeHtml(text);
+    return escaped
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.*?)\*/g, '<em>$1</em>')
+      .replace(/`(.*?)`/g, '<code class="md-code">$1</code>');
   }
 
   function openSortActionSheet() {
