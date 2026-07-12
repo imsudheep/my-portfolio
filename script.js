@@ -91,10 +91,10 @@
 
 // ---- Journey horizontal scroll (native sticky + scroll-driven transform) ----
   const journeySection = document.getElementById('journey');          // the scroll track
-  const journeyPin = journeySection?.querySelector('.journey-pin');   // sticky viewport
+  const journeyPinEl = journeySection?.querySelector('.journey-pin');   // sticky viewport
   const journeyContent = journeySection?.querySelector('.journey-content'); // wide strip
 
-  if (journeySection && journeyPin && journeyContent) {
+  if (journeySection && journeyPinEl && journeyContent) {
     let maxScroll = 0;
     let lastWidth = window.innerWidth;
 
