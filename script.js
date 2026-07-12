@@ -89,65 +89,47 @@
     });
   });
 
-  // ---- Journey horizontal scroll (GSAP ScrollTrigger) ----
-  const journeySection = document.getElementById('journey');
-  const journeyContent = journeySection?.querySelector('.journey-content');
-  let jResizeTimer;
-  let lastWidth = window.innerWidth;
+// ---- Journey horizontal scroll (native sticky + scroll-driven transform) ----
+  const journeySection = document.getElementById('journey');          // the scroll track
+  const journeyPin = journeySection?.querySelector('.journey-pin');   // sticky viewport
+  const journeyContent = journeySection?.querySelector('.journey-content'); // wide strip
 
-  if (journeySection && journeyContent) {
-    gsap.registerPlugin(ScrollTrigger);
+  if (journeySection && journeyPin && journeyContent) {
+    let maxScroll = 0;
+    let lastWidth = window.innerWidth;
 
-    // iOS cure: lock the address bar + ignore vertical resize
-    ScrollTrigger.normalizeScroll(true);
-    ScrollTrigger.config({ ignoreMobileResize: true });
+    function setupJourney() {
+      maxScroll = Math.max(0, journeyContent.scrollWidth - window.innerWidth);
+      const multiplier = window.innerWidth <= 768 ? 0.45 : 1.0;
+      // Explicit track height = one viewport (the sticky pin) + horizontal travel
+      journeySection.style.height = (window.innerHeight + maxScroll * multiplier) + 'px';
+      updateJourney();
+    }
 
-    const getMaxScroll = () => Math.max(0, journeyContent.scrollWidth - window.innerWidth);
-    const getMultiplier = () => (window.innerWidth <= 768 ? 0.45 : 1.0);
+    function updateJourney() {
+      const rect = journeySection.getBoundingClientRect();
+      const scrollable = journeySection.offsetHeight - window.innerHeight;
+      let progress = scrollable > 0 ? (-rect.top) / scrollable : 0;
+      progress = Math.min(1, Math.max(0, progress));
+      journeyContent.style.transform = 'translate3d(' + (-maxScroll * progress) + 'px,0,0)';
+    }
 
-    gsap.to(journeyContent, {
-      x: () => -getMaxScroll(),
-      ease: 'none',
-      scrollTrigger: {
-        trigger: journeySection,
-        pin: '.journey-pin',
-        // NO pinType:'transform', NO anticipatePin  <-- these caused the shaking
-        start: 'top top',
-        end: () => `+=${getMaxScroll() * getMultiplier()}`,
-        scrub: true,
-        invalidateOnRefresh: true,
-      }
-    });
+    window.addEventListener('scroll', updateJourney, { passive: true });
 
-    // re-measure after images load so scrollWidth isn't short
-    const imgs = journeyContent.querySelectorAll('img');
-    let loaded = 0;
-    const onImg = () => { if (++loaded >= imgs.length) ScrollTrigger.refresh(); };
-    imgs.forEach((img) => {
-      if (img.complete) onImg();
-      else {
-        img.addEventListener('load', onImg, { once: true });
-        img.addEventListener('error', onImg, { once: true });
-      }
-    });
-
+    // Only recalc on real WIDTH change — ignore the iOS address-bar vertical shuffle
     window.addEventListener('resize', function () {
       if (window.innerWidth === lastWidth) return;
       lastWidth = window.innerWidth;
-      clearTimeout(jResizeTimer);
-      jResizeTimer = setTimeout(function () {
-        if (typeof renderFinder === 'function') renderFinder();
-        ScrollTrigger.refresh();
-      }, 150);
+      setupJourney();
     });
 
-    window.addEventListener('load', function () {
-      setTimeout(function () { ScrollTrigger.refresh(); }, 100);
+    window.addEventListener('load', setupJourney);
+    window.addEventListener('pageshow', setupJourney);
+    journeyContent.querySelectorAll('img').forEach(function (img) {
+      if (!img.complete) img.addEventListener('load', setupJourney, { once: true });
     });
 
-    window.addEventListener('pageshow', function () {
-      ScrollTrigger.refresh();
-    });
+    setupJourney();
   }
 
   // ---- Dot nav: use journey-pin for position tracking ----

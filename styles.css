@@ -177,13 +177,20 @@ video { display: block; width: 100%; height: 100%; object-fit: cover; }
 }
 
 .section--journey {
+  position: relative;
   min-height: 0 !important;
   display: block !important;
-  overflow: visible !important;
+  overflow: visible !important;   /* sticky needs non-clipping ancestors */
+  padding: 0 !important;
+  /* height is set by JS */
 }
 
 .journey-pin {
-  height: 100vh;        /* removed the 100dvh line */
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;                 /* dvh matches the real visible viewport on iOS */
   width: 100%;
   overflow: hidden;
   display: flex;
