@@ -98,20 +98,20 @@
   if (journeySection && journeyContent) {
     gsap.registerPlugin(ScrollTrigger);
 
-    // (1) Stop iOS address-bar height changes from firing refresh mid-scroll
+    // iOS cure: lock the address bar + ignore vertical resize
+    ScrollTrigger.normalizeScroll(true);
     ScrollTrigger.config({ ignoreMobileResize: true });
 
     const getMaxScroll = () => Math.max(0, journeyContent.scrollWidth - window.innerWidth);
     const getMultiplier = () => (window.innerWidth <= 768 ? 0.45 : 1.0);
 
-    const journeyTween = gsap.to(journeyContent, {
+    gsap.to(journeyContent, {
       x: () => -getMaxScroll(),
       ease: 'none',
       scrollTrigger: {
         trigger: journeySection,
         pin: '.journey-pin',
-        pinType: 'transform',      // (2) transform-based pin, dodges iOS fixed-pos desync
-        anticipatePin: 1,          // smooths the pin hand-off on momentum scroll
+        // NO pinType:'transform', NO anticipatePin  <-- these caused the shaking
         start: 'top top',
         end: () => `+=${getMaxScroll() * getMultiplier()}`,
         scrub: true,
@@ -119,28 +119,25 @@
       }
     });
 
-    // (3) Re-measure once all images inside the timeline have loaded
-    //     so scrollWidth (and the end bound) isn't computed short.
+    // re-measure after images load so scrollWidth isn't short
     const imgs = journeyContent.querySelectorAll('img');
     let loaded = 0;
     const onImg = () => { if (++loaded >= imgs.length) ScrollTrigger.refresh(); };
     imgs.forEach((img) => {
-      if (img.complete) { onImg(); }
+      if (img.complete) onImg();
       else {
         img.addEventListener('load', onImg, { once: true });
         img.addEventListener('error', onImg, { once: true });
       }
     });
 
-    // (4) Only refresh on real WIDTH changes (orientation flips), never on
-    //     the vertical address-bar shuffle.
     window.addEventListener('resize', function () {
-      if (window.innerWidth === lastWidth) return;   // ignore vertical-only changes
+      if (window.innerWidth === lastWidth) return;
       lastWidth = window.innerWidth;
       clearTimeout(jResizeTimer);
       jResizeTimer = setTimeout(function () {
         if (typeof renderFinder === 'function') renderFinder();
-        ScrollTrigger.refresh();                      // recalc bounds after orientation flip
+        ScrollTrigger.refresh();
       }, 150);
     });
 
@@ -148,7 +145,7 @@
       setTimeout(function () { ScrollTrigger.refresh(); }, 100);
     });
 
-    window.addEventListener('pageshow', function (e) {
+    window.addEventListener('pageshow', function () {
       ScrollTrigger.refresh();
     });
   }
