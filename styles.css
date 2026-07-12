@@ -183,8 +183,7 @@ video { display: block; width: 100%; height: 100%; object-fit: cover; }
 }
 
 .journey-pin {
-  height: 100vh;
-  height: 100dvh;
+  height: 100vh;        /* removed the 100dvh line */
   width: 100%;
   overflow: hidden;
   display: flex;

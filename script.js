@@ -92,22 +92,26 @@
   // ---- Journey horizontal scroll (GSAP ScrollTrigger) ----
   const journeySection = document.getElementById('journey');
   const journeyContent = journeySection?.querySelector('.journey-content');
-
   let jResizeTimer;
   let lastWidth = window.innerWidth;
 
   if (journeySection && journeyContent) {
     gsap.registerPlugin(ScrollTrigger);
 
+    // (1) Stop iOS address-bar height changes from firing refresh mid-scroll
+    ScrollTrigger.config({ ignoreMobileResize: true });
+
     const getMaxScroll = () => Math.max(0, journeyContent.scrollWidth - window.innerWidth);
     const getMultiplier = () => (window.innerWidth <= 768 ? 0.45 : 1.0);
 
-    gsap.to(journeyContent, {
+    const journeyTween = gsap.to(journeyContent, {
       x: () => -getMaxScroll(),
       ease: 'none',
       scrollTrigger: {
         trigger: journeySection,
         pin: '.journey-pin',
+        pinType: 'transform',      // (2) transform-based pin, dodges iOS fixed-pos desync
+        anticipatePin: 1,          // smooths the pin hand-off on momentum scroll
         start: 'top top',
         end: () => `+=${getMaxScroll() * getMultiplier()}`,
         scrub: true,
@@ -115,22 +119,33 @@
       }
     });
 
-    window.addEventListener('resize', function () {
-      if (window.innerWidth === lastWidth) return;
-      lastWidth = window.innerWidth;
+    // (3) Re-measure once all images inside the timeline have loaded
+    //     so scrollWidth (and the end bound) isn't computed short.
+    const imgs = journeyContent.querySelectorAll('img');
+    let loaded = 0;
+    const onImg = () => { if (++loaded >= imgs.length) ScrollTrigger.refresh(); };
+    imgs.forEach((img) => {
+      if (img.complete) { onImg(); }
+      else {
+        img.addEventListener('load', onImg, { once: true });
+        img.addEventListener('error', onImg, { once: true });
+      }
+    });
 
+    // (4) Only refresh on real WIDTH changes (orientation flips), never on
+    //     the vertical address-bar shuffle.
+    window.addEventListener('resize', function () {
+      if (window.innerWidth === lastWidth) return;   // ignore vertical-only changes
+      lastWidth = window.innerWidth;
       clearTimeout(jResizeTimer);
       jResizeTimer = setTimeout(function () {
-        if (typeof renderFinder === 'function') {
-          renderFinder();
-        }
-      }, 100);
+        if (typeof renderFinder === 'function') renderFinder();
+        ScrollTrigger.refresh();                      // recalc bounds after orientation flip
+      }, 150);
     });
 
     window.addEventListener('load', function () {
-      setTimeout(function () {
-        ScrollTrigger.refresh();
-      }, 100);
+      setTimeout(function () { ScrollTrigger.refresh(); }, 100);
     });
 
     window.addEventListener('pageshow', function (e) {
